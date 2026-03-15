@@ -7,13 +7,13 @@ import json
 
 # ========== 配置区：在此填入通过编辑模式调试得到的正确值 ==========
 # 平移
-DEFAULT_TX = -26
-DEFAULT_TY = -37
+DEFAULT_TX = -24
+DEFAULT_TY = -39
 # 缩放 (X, Y 独立)
 DEFAULT_SX = 1.95
 DEFAULT_SY = 1.4
 # 旋转角度 (度)
-DEFAULT_ANGLE = -1
+DEFAULT_ANGLE = 0
 # 旋转中心 (画布坐标，通常为 500,400)
 DEFAULT_CX = 500
 DEFAULT_CY = 400
@@ -135,7 +135,7 @@ def main():
     center_marker = '<circle id="rotation-center-marker" cx="0" cy="0" r="5" fill="none" stroke="blue" stroke-width="2" style="display:none;" /><path id="rotation-center-cross" d="M-5 0 L5 0 M0 -5 L0 5" stroke="blue" stroke-width="2" style="display:none;" transform="translate(0,0)" />'
     svg_content = re.sub(r'(<svg[^>]*>)', r'\1' + center_marker, svg_content, count=1)
 
-    # 4. 构造 bgState 初始化的 JavaScript 代码（使用配置区的值）
+    # 4. 构造 bgState 初始化的 JavaScript 代码（使用配置区的值），并保存默认状态
     bg_state_code = f"""let bgState = {{
     tx: {DEFAULT_TX},
     ty: {DEFAULT_TY},
@@ -144,7 +144,8 @@ def main():
     angle: {DEFAULT_ANGLE},
     cx: {DEFAULT_CX},
     cy: {DEFAULT_CY},
-}};"""
+}};
+const defaultBgState = {{ ...bgState }};"""
 
     # 5. HTML模板（包含占位符 /*BG_STATE*/）
     html_template = """<!DOCTYPE html>
@@ -341,6 +342,7 @@ def main():
             <p><kbd>滚轮</kbd> 同时缩放 XY (等比)</p>
             <p>下方按钮可独立缩放 X 或 Y。</p>
             <p>勾选“固定全图”可强制显示完整画布，便于调试。</p>
+            <p><strong>重置背景将恢复为您在脚本配置区设置的默认值。</strong></p>
         </div>
     </div>
 
@@ -424,16 +426,9 @@ def main():
             applyBackgroundTransform();
             showCenterMarker(false);
 
+            // 重置背景到默认值（从配置区读取）
             function resetBackground() {
-                bgState = {
-                    tx: 0,
-                    ty: 0,
-                    sx: 1.0,
-                    sy: 1.0,
-                    angle: 0,
-                    cx: 500,
-                    cy: 400,
-                };
+                bgState = { ...defaultBgState };
                 applyBackgroundTransform();
                 showCenterMarker(false);
             }
@@ -688,7 +683,8 @@ def main():
         f.write(html_output.replace('{svg_content}', svg_content))
 
     print("交互式地图已生成：map.html")
-    print("默认背景参数已从配置区读取。如需修改，请编辑脚本顶部的 DEFAULT_* 变量后重新运行。")
+    print("默认背景参数已从配置区读取。重置背景将恢复这些默认值。")
+    print("如需修改默认值，请编辑脚本顶部的 DEFAULT_* 变量后重新运行。")
 
 if __name__ == '__main__':
     main()

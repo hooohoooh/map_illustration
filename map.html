@@ -239,6 +239,7 @@
             <p><kbd>滚轮</kbd> 同时缩放 XY (等比)</p>
             <p>下方按钮可独立缩放 X 或 Y。</p>
             <p>勾选“固定全图”可强制显示完整画布，便于调试。</p>
+            <p><strong>重置背景将恢复为您在脚本配置区设置的默认值。</strong></p>
         </div>
     </div>
 
@@ -290,14 +291,15 @@
 
             // ---------- 背景变换状态 ----------
             let bgState = {
-    tx: -26,
-    ty: -37,
+    tx: -21,
+    ty: -38,
     sx: 1.95,
     sy: 1.4,
-    angle: -1,
+    angle: 0,
     cx: 500,
     cy: 400,
 };
+const defaultBgState = { ...bgState };
 
             // 更新背景 transform 并刷新显示
             function applyBackgroundTransform() {
@@ -330,16 +332,9 @@
             applyBackgroundTransform();
             showCenterMarker(false);
 
+            // 重置背景到默认值（从配置区读取）
             function resetBackground() {
-                bgState = {
-                    tx: 0,
-                    ty: 0,
-                    sx: 1.0,
-                    sy: 1.0,
-                    angle: 0,
-                    cx: 500,
-                    cy: 400,
-                };
+                bgState = { ...defaultBgState };
                 applyBackgroundTransform();
                 showCenterMarker(false);
             }
