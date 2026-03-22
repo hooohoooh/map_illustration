@@ -1,125 +1,120 @@
-﻿p_zendar|禅 达 
+p_zendar|禅 达 
 p_town_1|江 户 
 p_town_2|水 户 
 p_town_3|箱 馆 
 p_town_4|京 都 
-p_town_5|堺 
+p_town_5|大 坂 
 p_town_6|津 
 p_town_7|姬 路 
 p_town_8|金 泽 
 p_town_9|名 古 屋 
 p_town_10|新 潟 
-p_town_11|甲 府 
-p_town_12|高 田 
+p_town_11|长 府 
+p_town_12|佐 贺 
 p_town_13|广 岛 
 p_town_14|冈 山 
 p_town_15|仙 台 
-p_town_16|会 津 
+p_town_16|会 津 若 松 
 p_town_17|久 保 田 
 p_town_18|盛 冈 
 p_town_19|博 多 
 p_town_20|鹿 儿 岛 
 p_town_21|长 崎 
 p_town_22|松 山 
-p_town_23|小 田 原 
-p_town_24|奈 良 
-p_town_25|浜 松 
-p_town_26|福 井 
-p_town_27|山 口 
-p_town_28|松 江 
-p_town_29|府 內 
-p_town_30|熊 本 
-p_town_31|高 知 
-p_town_32|鸟 取 
-p_town_33|延 冈 
-p_town_34|挂 川 
-p_town_35|加 纳 
-p_town_36|德 岛 
-p_town_37|和 歌 山  
-p_town_38|神 户 
-p_town_39|横 滨
+p_town_23|奈 良 
+p_town_24|福 井 
+p_town_25|熊 本 
+p_town_26|高 知 
+p_town_27|鸟 取 
+p_town_28|德 岛 
+p_town_29|和 歌 山 
+p_town_30|神 户 
+p_town_31|横 滨 
+p_town_32|骏 府 
+p_town_33|彦 根 
 p_castle_1|忍 城 
 p_castle_2|宇 都 宫 城 
 p_castle_3|前 桥 城 
 p_castle_4|古 河 城 
-p_castle_5|久 留 里 城 
-p_castle_6|洲 本 城 
-p_castle_7|小 浜 城 
-p_castle_8|上 野 城 
-p_castle_9|二 本 松 城 
-p_castle_10|彦 根 城 
-p_castle_11|筱 山 城 
-p_castle_12|鸟 羽 城 
-p_castle_13|吉 田 城 
-p_castle_14|富 山 城 
-p_castle_15|饭 山 城 
-p_castle_16|犬 山 城 
-p_castle_17|高 远 城 
-p_castle_18|村 上 城 
-p_castle_19|上 田 城 
-p_castle_20|横 须 贺 城 
-p_castle_21|高 岛 城 
-p_castle_22|大 垣 城 
-p_castle_23|笠 间 城 
-p_castle_24|沼 津 城 
-p_castle_25|浜 田 城 
-p_castle_26|萩 城 
-p_castle_27|三 原 城 
-p_castle_28|津 山 城 
-p_castle_29|胜 山 城 
-p_castle_30|八 户 阵 屋 
-p_castle_31|弘 前 城 
-p_castle_32|一 关 阵 屋 
-p_castle_33|山 形 城 
-p_castle_34|白 河 小 峰 城 
-p_castle_35|鹤 冈 城 
-p_castle_36|磐 城 平 城 
-p_castle_37|横 手 城 
-p_castle_38|平 户 城 
-p_castle_39|小 仓 城 
-p_castle_40|大 圣 寺 阵 屋 
-p_castle_41|沃 肥 城 
-p_castle_42|柳 川 城 
-p_castle_43|八 代 城 
-p_castle_44|久 留 米 城 
-p_castle_45|宇 和 岛 城 
-p_castle_46|大 洲 城 
-p_castle_47|龙 野 城 
-p_castle_48|高 松 城 
-p_castle_49|川 越 城 
-p_castle_50|佐 仓 城 
-p_castle_51|明 石 城 
-p_castle_52|福 知 山 城 
-p_castle_53|骏 府 城 
-p_castle_54|冈 崎 城 
-p_castle_55|馆 林 城 
-p_castle_56|岩 村 城 
-p_castle_57|饭 田 城 
-p_castle_58|高 崎 城 
-p_castle_59|长 冈 城  
-p_castle_60|松 山 城 
-p_castle_61|福 山 城 
-p_castle_62|米 泽 城 
-p_castle_63|棚 仓 城 
-p_castle_64|佐 贺 城 
-p_castle_65|人 吉 城 
-p_castle_66|中 津 城 
-p_castle_67|淀 城  
-p_castle_68|丸 龟 城 
-p_castle_69|松 本 城 
-p_castle_70|松 代 城 
-p_castle_71|喜 连 川 阵 屋 
-p_castle_72|桑 名 城 
-p_castle_73|松 前 城 
-p_castle_74|大 坂 城 
-p_castle_75|西 尾 城 
-p_castle_76|唐 津 城 
-p_castle_77|臼 杵 城 
-p_castle_78|冈 城 
-p_castle_79|龟 山 城 
-p_castle_80|岸 和 田 城 
-p_castle_81|新 发 田 城 
-p_castle_82|田 中 城
+p_castle_5|洲 本 城 
+p_castle_6|小 浜 城 
+p_castle_7|上 野 城 
+p_castle_8|二 本 松 城 
+p_castle_9|筱 山 城 
+p_castle_10|松 坂 城 
+p_castle_11|吉 田 城 
+p_castle_12|富 山 城 
+p_castle_13|高 田 城 
+p_castle_14|村 上 城 
+p_castle_15|上 田 城 
+p_castle_16|大 垣 城 
+p_castle_17|笠 间 城 
+p_castle_18|沼 津 城 
+p_castle_19|浜 田 城 
+p_castle_20|萩 城 
+p_castle_21|三 原 城 
+p_castle_22|津 山 城 
+p_castle_23|山 口 城 
+p_castle_24|弘 前 城 
+p_castle_25|山 形 城 
+p_castle_26|白 河 小 峰 城 
+p_castle_27|鹤 冈 城 
+p_castle_28|磐 城 平 城 
+p_castle_29|横 手 城 
+p_castle_30|平 户 城 
+p_castle_31|小 仓 城 
+p_castle_32|大 圣 寺 阵 屋 
+p_castle_33|沃 肥 城 
+p_castle_34|柳 川 城 
+p_castle_35|八 代 城 
+p_castle_36|久 留 米 城 
+p_castle_37|宇 和 岛 城 
+p_castle_38|大 洲 城 
+p_castle_39|龙 野 城 
+p_castle_40|高 松 城 
+p_castle_41|川 越 城 
+p_castle_42|佐 仓 城 
+p_castle_43|明 石 城 
+p_castle_44|宫 津 城 
+p_castle_45|冈 崎 城 
+p_castle_46|馆 林 城 
+p_castle_47|高 崎 城 
+p_castle_48|长 冈 城 
+p_castle_49|福 山 城 
+p_castle_50|米 泽 城 
+p_castle_51|棚 仓 城 
+p_castle_52|延 冈 城 
+p_castle_53|中 津 城 
+p_castle_54|淀 城 
+p_castle_55|丸 龟 城 
+p_castle_56|松 本 城 
+p_castle_57|松 代 城 
+p_castle_58|喜 连 川 阵 屋 
+p_castle_59|桑 名 城 
+p_castle_60|松 前 城 
+p_castle_61|西 尾 城 
+p_castle_62|唐 津 城 
+p_castle_63|臼 杵 城 
+p_castle_64|冈 城 
+p_castle_65|丹 波 龟 山 城 
+p_castle_66|岸 和 田 城 
+p_castle_67|新 发 田 城 
+p_castle_68|岛 原 城 
+p_castle_69|今 治 城 
+p_castle_70|松 江 城 
+p_castle_71|小 田 原 城 
+p_castle_72|浜 松 城 
+p_castle_73|挂 川 城 
+p_castle_74|伊 势 龟 山 城 
+p_castle_75|膳 所 城 
+p_castle_76|小 松 城 
+p_castle_77|丸 冈 城 
+p_castle_78|土 浦 城 
+p_castle_79|府 中 城 
+p_castle_80|三 春 城 
+p_castle_81|中 村 城 
+p_castle_82|新 庄 城 
+p_castle_83|大 馆 城 
 p_village_1|足 柄 上 郡 
 p_village_2|葛 西 
 p_village_3|多 摩 郡 
@@ -227,7 +222,7 @@ p_village_104|新 居 郡
 p_village_105|伊 予 郡 
 p_village_106|浮 穴 郡 
 p_village_107|宇 和 郡 
-p_village_108|大洲城下町 
+p_village_108|大 洲 城 下 町 
 p_village_109|那 贺 郡 
 p_village_110|香 川 郡 
 p_village_111|足 立 郡 
@@ -265,7 +260,7 @@ p_village_142|设 乐 郡
 p_village_143|土 岐 郡 
 p_village_144|伊 那 郡 
 p_village_145|足 柄 峠 
-p_village_146|长冈城下町
+p_village_146|长 冈 城 下 町 
 p_village_147|哲 多 郡 
 p_village_148|沼 隅 郡 
 p_village_149|置 赐 郡 米 泽 
@@ -273,7 +268,7 @@ p_village_150|多 贺 郡
 p_village_151|佐 贺 郡 
 p_village_152|人 吉 郡 
 p_village_153|国 东 郡 
-p_village_154|淀城城下町 
+p_village_154|淀 城 城 下 町 
 p_village_155|多 度 郡 
 p_village_156|二 方 郡 
 p_village_157|久 米 郡 
@@ -304,12 +299,12 @@ p_village_181|厚 见 郡
 p_village_182|筑 摩 郡 
 p_village_183|安 八 郡 
 p_village_184|春 日 井 郡 
-p_village_185|加 东 郡
+p_village_185|加 东 郡 
 p_fort_1|佐 渡 
 p_fort_2|对 马 
-p_fort_3|根 来 寺　
-p_fort_4|壬 生 寺
-p_fort_5|西 虾 夷  
+p_fort_3|根 来 寺 　
+p_fort_4|壬 生 寺 
+p_fort_5|西 虾 夷 
 p_fort_6|东 虾 夷 
 p_salt_mine|盐 矿 
 p_four_ways_inn|四 方 客 栈 
@@ -328,4 +323,4 @@ p_shinano_rebel_spawn_point|信 浓
 p_woku_pirate_spawn_point|九 州 
 p_kinai_rebel_spawn_point|畿 内 
 p_monk_rebel_spawn_point|东 海 道 
-p_northern_raider_spawn_point|北 海 道　 
+p_northern_raider_spawn_point|北 海 道 　 
