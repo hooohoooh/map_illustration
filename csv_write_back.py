@@ -49,7 +49,6 @@ def update_module_parties(cities_data, output_path):
     如果文件不存在，则按原逻辑生成新文件。
     """
     if not os.path.exists(output_path):
-        # 文件不存在，按原逻辑生成
         generate_module_parties_new(cities_data, output_path)
         return
 
@@ -57,47 +56,45 @@ def update_module_parties(cities_data, output_path):
     with codecs.open(output_path, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
-    # 正则表达式匹配一行城市条目
-    # 捕获：前导空格，第一个城市代码，第二个城市代码，中间部分，坐标x，坐标y
-    pattern = re.compile(
-        r'^(\s*)\(\s*"([^"]+)"\s*,\s*"([^"]+)"\s*,(.*),\s*\(\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*\)\s*,\s*\[\]\s*,\s*\d+\s*\)\s*,?$',
-        re.UNICODE
-    )
-
-    # 建立城市代码 -> (行索引, 匹配对象, 原行) 的映射
-    city_to_line = {}
+    # 建立城市代码 -> 行索引的映射（根据第一个引号内的城市代码）
+    city_to_index = {}
     for idx, line in enumerate(lines):
-        m = pattern.match(line)
+        m = re.search(r'^\s*\(\s*"([^"]+)"', line)
         if m:
-            city_code = m.group(2)   # 第一个城市代码
-            # 可能有多个条目对应同一城市？取第一个遇到的行
-            if city_code not in city_to_line:
-                city_to_line[city_code] = (idx, m, line)
+            old_city = m.group(1)
+            city_to_index[old_city] = idx
 
-    # 更新每一行
     updated = False
     for city, coord, name, faction, faction_cn in cities_data:
-        if city in city_to_line:
-            idx, m, original_line = city_to_line[city]
-            leading_spaces = m.group(1)
-            # 新的坐标字符串
-            new_coord = parse_coord(coord)
-            # 构建新行，保留中间部分（group4）不变
-            new_line = f'{leading_spaces}("{city}", "{city}", {m.group(4)}, {new_coord}, [], 195),'
-            # 如果原行末尾有换行符，我们保留
-            if original_line.endswith('\n'):
-                new_line += '\n'
-            lines[idx] = new_line
-            updated = True
+        # 查找文件中对应的行（城市代码匹配）
+        if city in city_to_index:
+            idx = city_to_index[city]
+            line = lines[idx]
+            new_line = line
+
+            # 1. 替换城市代码（前两个出现）
+            # 使用 replace 替换前两个引号内的城市代码（确保不改变周围空格）
+            # 注意：如果新城市代码与旧相同，这一步不会改变任何内容
+            new_line = new_line.replace(f'"{city}"', f'"{city}"', 2)
+
+            # 2. 替换坐标
+            # 解析新坐标字符串（格式如 "(116, -134.5)"）
+            new_coord_str = parse_coord(coord)
+            # 匹配原行中的坐标部分（第一个括号对，包含两个数字）
+            coord_pattern = r'\(\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*\)'
+            new_line = re.sub(coord_pattern, new_coord_str, new_line, count=1)
+
+            if new_line != line:
+                lines[idx] = new_line
+                updated = True
 
     if updated:
-        # 写回文件
         with codecs.open(output_path, 'w', encoding='utf-8') as f:
             f.writelines(lines)
         print(f"更新 {output_path} 完成。")
     else:
         print(f"{output_path} 中未找到任何匹配的城市，未做修改。")
-
+        
 def generate_module_parties_new(cities_data, output_path):
     """生成新的 module_parties.py 文件（旧逻辑）"""
     with codecs.open(output_path, 'w', encoding='utf-8') as f:
