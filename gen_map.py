@@ -6,9 +6,9 @@ import colorsys
 import json
 
 # ========== 配置区 ==========
-DEFAULT_TX = -24
+DEFAULT_TX = -14
 DEFAULT_TY = -39
-DEFAULT_SX = 1.95
+DEFAULT_SX = 2.0
 DEFAULT_SY = 1.4
 DEFAULT_ANGLE = 0
 DEFAULT_CX = 500
@@ -481,7 +481,7 @@ const defaultBgState = {{ ...bgState }};"""
                 center: true,
                 minZoom: 0.5,
                 maxZoom: 10,
-                zoomScaleSensitivity: 0.4,
+                zoomScaleSensitivity: 1,
             });
 
             const labels = svgElement.querySelectorAll('.map-label');
