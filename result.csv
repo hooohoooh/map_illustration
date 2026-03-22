@@ -3,14 +3,14 @@ town_1,"116,-134.5",江户,fac_kingdom_6,江户幕府
 town_2,"152,-98",水户,fac_kingdom_17,水户藩
 town_3,"169.0,173.0",箱馆,fac_kingdom_6,江户幕府
 town_4,"-82,-171",京都,fac_kingdom_6,江户幕府
-town_5,"-104,-195",堺,fac_kingdom_7,纪州藩
+town_5,"-104,-195",大坂,fac_kingdom_6,江户幕府
 town_6,"-42,-184",津,fac_kingdom_3,津藩
 town_7,"-132,-177.5",姬路,fac_kingdom_19,冈山藩
 town_8,"-36.2,-82.8",金泽,fac_kingdom_20,加贺藩
 town_9,"-28,-167",名古屋,fac_kingdom_23,尾张藩
-town_10,"76.3,-26.3",新潟,fac_kingdom_1,会津藩
+town_10,"76.3,-26.3",新潟,fac_kingdom_6,江户幕府
 town_11,"54.3,-134.5",甲府,fac_kingdom_6,江户幕府
-town_12,"40.9,-59.2",高田,fac_kingdom_18,长冈藩
+town_12,"-355.3 , -251.7",佐贺,fac_kingdom_16,肥前藩
 town_13,"-246,-204",广岛,fac_kingdom_23,尾张藩
 town_14,"-168,-188",冈山,fac_kingdom_19,冈山藩
 town_15,"173.4,-12.4",仙台,fac_kingdom_2,仙台藩
@@ -19,7 +19,7 @@ town_17,"133.2,65.1",久保田,fac_kingdom_14,米泽藩
 town_18,"182.7,69.2",盛冈,fac_kingdom_10,盛冈藩
 town_19,"-337,-233",博多,fac_kingdom_9,福冈藩
 town_20,"-337.6,-338",鹿儿岛,fac_kingdom_15,萨摩藩
-town_21,"-369,-279",长崎,fac_kingdom_16,肥前藩
+town_21,"-369,-279",长崎,fac_kingdom_6,江户幕府
 town_22,"-227.5,-230.9",松山,fac_kingdom_12,土佐藩
 town_23,"89,-157",小田原,fac_kingdom_6,江户幕府
 town_24,"-79.5,-187.4",奈良,fac_kingdom_7,纪州藩
@@ -27,13 +27,10 @@ town_25,"24,-179",浜松,fac_kingdom_23,尾张藩
 town_26,"-58.0,-123.0",福井,fac_kingdom_5,福井藩
 town_27,"-290.4,-212.8",山口,fac_kingdom_4,长州藩
 town_28,"-213.9,-139.1",松江,fac_kingdom_8,鸟取藩
-town_29,"-276.5,-260.5",府內,fac_kingdom_6,江户幕府
 town_30,"-336.2,-276.6",熊本,fac_kingdom_21,熊本藩
 town_31,"-192,-240",高知,fac_kingdom_12,土佐藩
 town_32,"-161.7,-138.4",鸟取,fac_kingdom_8,鸟取藩
-town_33,"-276.5,-290.5",延冈,fac_kingdom_6,江户幕府
 town_34,"34.0,-174.0",挂川,fac_kingdom_23,尾张藩
-town_35,"-26.5,-144.5",加纳,fac_kingdom_23,尾张藩
 town_36,"-140.0,-219.0",德岛,fac_kingdom_22,德岛藩
 town_37,"-119.2,-215.2",和歌山,fac_kingdom_7,纪州藩
 town_38,"-115.6,-186.1",神户,fac_kingdom_6,江户幕府
@@ -52,7 +49,7 @@ castle_11,"-109.4,-169.0",筱山城,fac_kingdom_6,江户幕府
 castle_12,"-32,-197",鸟羽城,fac_kingdom_3,津藩
 castle_13,"-2.0,-179.5",吉田城,fac_kingdom_7,纪州藩
 castle_14,"-11,-85",富山城,fac_kingdom_20,加贺藩
-castle_15,"56.7,-69.5",饭山城,fac_kingdom_18,长冈藩
+castle_15,"40.9,-59.2",高田城,fac_kingdom_20,加贺藩
 castle_16,"-26,-153",犬山城,fac_kingdom_23,尾张藩
 castle_17,"33.0,-122.0",高远城,fac_kingdom_6,江户幕府
 castle_18,"101.4,-8.9",村上城,fac_kingdom_25,庄内藩
@@ -101,7 +98,7 @@ castle_60,"-183.0,-170.9",松山城,fac_kingdom_8,鸟取藩
 castle_61,"-190,-190",福山城,fac_kingdom_19,冈山藩
 castle_62,"137.1,-24.2",米泽城,fac_kingdom_14,米泽藩
 castle_63,"150.0,-58.5",棚仓城,fac_kingdom_17,水户藩
-castle_65,"-327,-312",人吉城,fac_kingdom_15,萨摩藩
+castle_65,"-276.5,-290.5",延冈城,fac_kingdom_15,萨摩藩
 castle_66,"-295.8,-241.8",中津城,fac_kingdom_9,福冈藩
 castle_67,"-75.7,-180.4",淀城,fac_kingdom_7,纪州藩
 castle_68,"-176.3,-200.1",丸龟城,fac_kingdom_22,德岛藩

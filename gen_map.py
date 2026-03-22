@@ -2,36 +2,28 @@
 import csv
 import re
 import svgwrite
-import os
 import colorsys
+import json
 
-# ========== 配置区：在此填入通过编辑模式调试得到的正确值 ==========
-# 平移
+# ========== 配置区 ==========
 DEFAULT_TX = -24
 DEFAULT_TY = -39
-# 缩放 (X, Y 独立)
 DEFAULT_SX = 1.95
 DEFAULT_SY = 1.4
-# 旋转角度 (度)
 DEFAULT_ANGLE = 0
-# 旋转中心 (画布坐标，通常为 500,400)
 DEFAULT_CX = 500
 DEFAULT_CY = 400
-# ============================================================
+# ===========================
 
 def hsl_to_hex(h, s, l):
-    """将 HSL 颜色转换为十六进制字符串 #RRGGBB"""
     r, g, b = colorsys.hls_to_rgb(h/360.0, l/100.0, s/100.0)
     return "#{:02x}{:02x}{:02x}".format(int(r*255), int(g*255), int(b*255))
 
 def get_color_for_country(country_name):
-    """根据国家中文名生成十六进制颜色"""
     if not country_name:
-        return '#000000'  # 黑色
+        return '#000000'
     h = sum(ord(c) for c in country_name) * 13 % 360
-    s = 70
-    l = 40
-    return hsl_to_hex(h, s, l)
+    return hsl_to_hex(h, 70, 40)
 
 def parse_coord(coord_str):
     parts = coord_str.split(',')
@@ -57,7 +49,7 @@ def load_svg_background(filepath):
 
 def generate_city_svg(cities, canvas_width=1000, canvas_height=800, margin=0.1):
     if not cities:
-        return None
+        return None, {}
 
     xs = [c[1][0] for c in cities]
     ys = [c[1][1] for c in cities]
@@ -85,45 +77,42 @@ def generate_city_svg(cities, canvas_width=1000, canvas_height=800, margin=0.1):
     font_family = "SimHei, 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', sans-serif"
     font_size = 20
 
-    for code, coord, name, country_name in cities:
-        x, y = map_coord(*coord)
+    city_data = {}
 
-        # 根据国家名生成文字颜色（十六进制）
+    for idx, (code, coord, name, country_code, country_name) in enumerate(cities):
+        x, y = map_coord(*coord)
         text_color = get_color_for_country(country_name)
-        # 构造显示文本
-        if country_name:
-            display_name = f"{name} ({country_name})"
-        else:
-            display_name = name
+        display_name = f"{name} ({country_name})" if country_name else name
+        label_id = f"city-label-{idx}"
 
         if code.startswith('town'):
-            # 城镇：黑色方形，边长 8 像素
-            dwg.add(dwg.rect(insert=(x-4, y-4), size=(8, 8),
-                             fill='black', stroke='none'))
-            text_elem = dwg.text(display_name, insert=(x + 7, y + 4),
-                                 font_size=font_size, font_family=font_family,
-                                 fill=text_color, class_='map-label')
-            dwg.add(text_elem)
+            dwg.add(dwg.rect(insert=(x-4, y-4), size=(8, 8), fill='black', stroke='none'))
+            text_elem = dwg.text(display_name, insert=(x+7, y+4), font_size=font_size,
+                                 font_family=font_family, fill=text_color, class_='map-label',
+                                 id=label_id)
         elif code.startswith('castle'):
-            # 城堡：黑色圆形，半径 3 像素
             dwg.add(dwg.circle(center=(x, y), r=3, fill='black', stroke='none'))
-            text_elem = dwg.text(display_name, insert=(x + 7, y + 4),
-                                 font_size=font_size, font_family=font_family,
-                                 fill=text_color, class_='map-label')
-            dwg.add(text_elem)
+            text_elem = dwg.text(display_name, insert=(x+7, y+4), font_size=font_size,
+                                 font_family=font_family, fill=text_color, class_='map-label',
+                                 id=label_id)
         else:
             dwg.add(dwg.circle(center=(x, y), r=3, fill='gray', stroke='none'))
-            text_elem = dwg.text(display_name, insert=(x + 7, y + 4),
-                                 font_size=font_size, font_family=font_family,
-                                 fill='black', class_='map-label')
-            dwg.add(text_elem)
+            text_elem = dwg.text(display_name, insert=(x+7, y+4), font_size=font_size,
+                                 font_family=font_family, fill='black', class_='map-label',
+                                 id=label_id)
+
+        dwg.add(text_elem)
+        city_data[label_id] = {
+            "originalText": display_name,
+            "cityCode": code,
+            "factionCode": country_code
+        }
 
     svg_string = dwg.tostring()
     svg_string = re.sub(r'<\?xml[^>]*\?>', '', svg_string).strip()
-    return svg_string
+    return svg_string, city_data
 
 def main():
-    # 1. 读取城市数据（包含国家中文名）
     cities = []
     with open('result.csv', 'r', encoding='utf-8-sig') as f:
         reader = csv.reader(f)
@@ -134,19 +123,18 @@ def main():
             code = row[0].strip()
             coord_str = row[1].strip()
             name = row[2].strip()
-            country_name = row[4].strip()  # 第5列是国家中文名
+            country_code = row[3].strip()
+            country_name = row[4].strip()
             coord = parse_coord(coord_str)
             if coord:
-                cities.append((code, coord, name, country_name))
+                cities.append((code, coord, name, country_code, country_name))
 
     if not cities:
         print("没有有效的城市数据！")
         return
 
-    # 2. 生成城市标记 SVG
-    city_svg = generate_city_svg(cities)
+    city_svg, city_data = generate_city_svg(cities)
 
-    # 3. 加载日本地图背景
     bg_inner = load_svg_background('japan.svg')
     if bg_inner:
         bg_group = f'<g id="japan-background" opacity="0.6">{bg_inner}</g>'
@@ -156,11 +144,9 @@ def main():
         svg_content = city_svg
         print("未找到 japan.svg，将仅显示城市标记")
 
-    # 添加旋转中心标记（初始隐藏）
     center_marker = '<circle id="rotation-center-marker" cx="0" cy="0" r="5" fill="none" stroke="blue" stroke-width="2" style="display:none;" /><path id="rotation-center-cross" d="M-5 0 L5 0 M0 -5 L0 5" stroke="blue" stroke-width="2" style="display:none;" transform="translate(0,0)" />'
     svg_content = re.sub(r'(<svg[^>]*>)', r'\1' + center_marker, svg_content, count=1)
 
-    # 4. 构造 bgState 初始化的 JavaScript 代码
     bg_state_code = f"""let bgState = {{
     tx: {DEFAULT_TX},
     ty: {DEFAULT_TY},
@@ -172,7 +158,9 @@ def main():
 }};
 const defaultBgState = {{ ...bgState }};"""
 
-    # 5. HTML 模板（包含最小化功能）
+    city_data_json = json.dumps(city_data, ensure_ascii=False)
+
+    # 完整 HTML 模板（包含全屏样式）
     html_template = """<!DOCTYPE html>
 <html>
 <head>
@@ -241,9 +229,6 @@ const defaultBgState = {{ ...bgState }};"""
         }
         #toggle-panel-btn:hover {
             background-color: #45a049;
-        }
-        #toggle-panel-btn.hidden {
-            display: flex;  /* 始终显示，由内部符号变化 */
         }
         #control-panel h3 {
             margin-top: 0;
@@ -343,6 +328,7 @@ const defaultBgState = {{ ...bgState }};"""
     <button id="toggle-panel-btn">+</button>
     <div id="control-panel" class="hidden">
         <h3>背景地图调整</h3>
+        <!-- 编辑模式移到标题下方最显眼位置 -->
         <div class="mode-toggle">
             <label>
                 <input type="checkbox" id="edit-mode-checkbox"> 编辑模式
@@ -390,6 +376,7 @@ const defaultBgState = {{ ...bgState }};"""
             <span class="scale-value" id="sy-value">1.00</span>
         </div>
 
+        <button id="toggle-code-btn">显示城市代码</button>
         <button id="reset-bg-btn">重置背景</button>
         <div class="note">
             <p><strong>编辑模式操作（背景移动，城市不动）：</strong></p>
@@ -400,15 +387,17 @@ const defaultBgState = {{ ...bgState }};"""
             <p>下方按钮可独立缩放 X 或 Y。</p>
             <p>勾选“固定全图”可强制显示完整画布，便于调试。</p>
             <p><strong>重置背景将恢复为您在脚本配置区设置的默认值。</strong></p>
+            <p><strong>“显示城市代码”按钮：</strong> 点击后在城市名后显示城市代号和派系代号，再次点击恢复。</p>
         </div>
     </div>
 
     <script>
+        const cityDataMap = {city_data_json};
+
         (function() {
             const svgElement = document.querySelector('#map-container svg');
             if (!svgElement) return;
 
-            // 获取背景元素
             const bgGroup = document.getElementById('japan-background');
             if (!bgGroup) {
                 document.getElementById('control-panel').style.display = 'none';
@@ -416,7 +405,6 @@ const defaultBgState = {{ ...bgState }};"""
                 return;
             }
 
-            // 添加固定网格背景（作为参考系）
             function addGrid() {
                 const gridGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
                 gridGroup.setAttribute('id', 'grid-background');
@@ -445,14 +433,11 @@ const defaultBgState = {{ ...bgState }};"""
             }
             addGrid();
 
-            // 旋转中心标记
             const centerMarker = document.getElementById('rotation-center-marker');
             const centerCross = document.getElementById('rotation-center-cross');
 
-            // ---------- 背景变换状态 ----------
             /*BG_STATE*/
 
-            // 更新背景 transform 并刷新显示
             function applyBackgroundTransform() {
                 const { tx, ty, sx, sy, angle, cx, cy } = bgState;
                 const transform = `translate(${tx}, ${ty}) translate(${cx}, ${cy}) rotate(${angle}) scale(${sx}, ${sy}) translate(${-cx}, ${-cy})`;
@@ -483,14 +468,12 @@ const defaultBgState = {{ ...bgState }};"""
             applyBackgroundTransform();
             showCenterMarker(false);
 
-            // 重置背景到默认值（从配置区读取）
             function resetBackground() {
                 bgState = { ...defaultBgState };
                 applyBackgroundTransform();
                 showCenterMarker(false);
             }
 
-            // ---------- 初始化 svg-pan-zoom ----------
             let panZoomInstance = svgPanZoom(svgElement, {
                 zoomEnabled: true,
                 controlIconsEnabled: true,
@@ -501,7 +484,6 @@ const defaultBgState = {{ ...bgState }};"""
                 zoomScaleSensitivity: 0.4,
             });
 
-            // 文字固定大小处理
             const labels = svgElement.querySelectorAll('.map-label');
             const baseFontSize = 20;
             function updateFontSize() {
@@ -514,11 +496,10 @@ const defaultBgState = {{ ...bgState }};"""
             updateFontSize();
             panZoomInstance.setOnZoom(updateFontSize);
 
-            // ---------- 固定全图控制 ----------
             const fixedViewCheckbox = document.getElementById('fixed-view-checkbox');
             let fixedView = false;
 
-            function applyFixedView(force) {
+            function applyFixedView() {
                 if (fixedView) {
                     svgElement.setAttribute('viewBox', '0 0 1000 800');
                     if (panZoomInstance && !editingMode) {
@@ -548,7 +529,6 @@ const defaultBgState = {{ ...bgState }};"""
                 applyFixedView();
             });
 
-            // ---------- 编辑模式状态 ----------
             let editingMode = false;
             const editCheckbox = document.getElementById('edit-mode-checkbox');
 
@@ -677,7 +657,7 @@ const defaultBgState = {{ ...bgState }};"""
                         panZoomInstance = null;
                     }
                     if (!fixedView) {
-                        // 保持当前 viewBox 不变
+                        // keep current viewBox
                     } else {
                         svgElement.setAttribute('viewBox', '0 0 1000 800');
                     }
@@ -725,6 +705,51 @@ const defaultBgState = {{ ...bgState }};"""
 
             document.getElementById('reset-bg-btn').addEventListener('click', resetBackground);
 
+            // ---------- 显示/隐藏城市代码 ----------
+            const toggleCodeBtn = document.getElementById('toggle-code-btn');
+            let codeVisible = false;
+
+            function initCityData() {
+                const labels = document.querySelectorAll('.map-label');
+                labels.forEach(label => {
+                    const id = label.id;
+                    const data = cityDataMap[id];
+                    if (data) {
+                        label.setAttribute('data-original-text', data.originalText);
+                        label.setAttribute('data-city-code', data.cityCode);
+                        label.setAttribute('data-faction-code', data.factionCode);
+                    }
+                });
+            }
+
+            function toggleCodeDisplay() {
+                const labels = document.querySelectorAll('.map-label');
+                if (!codeVisible) {
+                    labels.forEach(label => {
+                        const original = label.getAttribute('data-original-text');
+                        const cityCode = label.getAttribute('data-city-code');
+                        const factionCode = label.getAttribute('data-faction-code');
+                        let newText = original;
+                        if (cityCode || factionCode) {
+                            newText += ` [${cityCode}:${factionCode}]`;
+                        }
+                        label.textContent = newText;
+                    });
+                    toggleCodeBtn.textContent = '隐藏城市代码';
+                    codeVisible = true;
+                } else {
+                    labels.forEach(label => {
+                        const original = label.getAttribute('data-original-text');
+                        if (original) label.textContent = original;
+                    });
+                    toggleCodeBtn.textContent = '显示城市代码';
+                    codeVisible = false;
+                }
+            }
+
+            initCityData();
+            toggleCodeBtn.addEventListener('click', toggleCodeDisplay);
+
             // ---------- 面板最小化功能 ----------
             const toggleBtn = document.getElementById('toggle-panel-btn');
             const panel = document.getElementById('control-panel');
@@ -738,7 +763,6 @@ const defaultBgState = {{ ...bgState }};"""
                 }
             });
 
-            // 初始为非编辑模式
             setEditingMode(false);
         })();
     </script>
@@ -746,17 +770,19 @@ const defaultBgState = {{ ...bgState }};"""
 </html>
 """
 
-    # 6. 将占位符 /*BG_STATE*/ 替换为实际的 bgState 代码
     html_output = html_template.replace('/*BG_STATE*/', bg_state_code)
+    html_output = html_output.replace('{city_data_json}', city_data_json)
+    html_output = html_output.replace('{svg_content}', svg_content)
 
-    # 7. 写入 HTML 文件
     with open('map.html', 'w', encoding='utf-8') as f:
-        f.write(html_output.replace('{svg_content}', svg_content))
+        f.write(html_output)
 
     print("交互式地图已生成：map.html")
     print("默认背景参数已从配置区读取。重置背景将恢复这些默认值。")
     print("城镇显示为黑色方形，城堡显示为黑色圆形，文字颜色按国家区分并附国家名。")
     print("新增最小化按钮（左上角），点击可隐藏/显示控制面板。")
+    print("新增'显示城市代码'按钮，点击可在城市名后显示城市代号和派系代号。")
+    print("编辑模式复选框已移至控制面板最顶部。")
 
 if __name__ == '__main__':
     main()
