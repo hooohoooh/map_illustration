@@ -1,21 +1,24 @@
 # -*- coding: utf-8 -*-
 import csv
 import re
-import codecs
 
 def city_sort_key(city):
-    """自定义排序键：返回 (前缀优先级, 数字)，town 优先级0，castle优先级1"""
-    # 提取前缀（第一个下划线之前的部分）
+    """自定义排序键：返回 (前缀优先级, 数字)
+    优先级：town 为 0，castle 为 1，village 为 2，其他为 3。
+    """
     parts = city.split('_')
     prefix = parts[0] if len(parts) > 0 else ''
-    # 优先级定义
-    priority = 0 if prefix == 'town' else 1 if prefix == 'castle' else 2
-    # 提取最后一个数字（假设城市代号格式为 "town_123" 或 "castle_45"）
-    nums = re.findall(r'\d+', city)
-    if nums:
-        num = int(nums[-1])
+    if prefix == 'town':
+        priority = 0
+    elif prefix == 'castle':
+        priority = 1
+    elif prefix == 'village':
+        priority = 2
     else:
-        num = 0
+        priority = 3
+
+    nums = re.findall(r'\d+', city)
+    num = int(nums[-1]) if nums else 0
     return (priority, num)
 
 def parse_module_parties(filepath):
@@ -23,7 +26,7 @@ def parse_module_parties(filepath):
     city_coord = {}
     re_city = re.compile(r'^\s*\("([^"]+)"')
     re_coord = re.compile(r'\((-?\d+\.?\d*),\s*(-?\d+\.?\d*)\)')
-    with codecs.open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line:
@@ -41,7 +44,7 @@ def parse_module_parties(filepath):
 def parse_parties_csv(filepath):
     """从 parties.csv 提取城市代号和中文名，返回字典 {代号: 中文名}"""
     city_name = {}
-    with codecs.open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line or '|' not in line:
@@ -58,7 +61,7 @@ def parse_module_scripts(filepath):
     """从 module_scripts.py 提取城市代号和国家代号，返回字典 {代号: 国家代号}"""
     city_faction = {}
     re_script = re.compile(r'call_script,\s*"script_give_center_to_faction_aux",\s*"([^"]+)",\s*"([^"]+)"')
-    with codecs.open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line:
@@ -75,7 +78,7 @@ def parse_module_scripts(filepath):
 def parse_factions_csv(filepath):
     """从 factions.csv 提取国家代号和国家中文名，返回字典 {代号: 中文名}"""
     faction_name = {}
-    with codecs.open(filepath, 'r', encoding='utf-8') as f:
+    with open(filepath, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
             if not line or '|' not in line:
@@ -93,7 +96,7 @@ def main():
     city_faction = parse_module_scripts('module_scripts.py')
     faction_name = parse_factions_csv('factions.csv')
 
-    # 按自定义规则排序：先 town 后 castle，每组内按数字升序
+    # 按自定义规则排序：town(0) → castle(1) → village(2) → 其他(3)，每组内按数字升序
     cities = sorted(city_coord.keys(), key=city_sort_key)
 
     # 准备输出行
@@ -108,15 +111,12 @@ def main():
         fac_ch = faction_name.get(fac, '') if fac else ''
         rows.append([city, coord, ch_name, fac, fac_ch])
 
-    # 写入带 BOM 的 UTF-8 CSV，以便 Excel 正常打开
-    with open('result.csv', 'wb') as f:
-        f.write(codecs.BOM_UTF8)
+    # 使用 utf-8-sig 自动添加 BOM，兼容 Excel
+    with open('result.csv', 'w', encoding='utf-8-sig', newline='') as f:
         writer = csv.writer(f)
-        for row in rows:
-            encoded_row = [cell.encode('utf-8') if isinstance(cell, unicode) else str(cell) for cell in row]
-            writer.writerow(encoded_row)
+        writer.writerows(rows)
 
-    print u"生成 result.csv 完成！"
+    print("生成 result.csv 完成！")
 
 if __name__ == '__main__':
     main()

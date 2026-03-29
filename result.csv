@@ -1,117 +1,302 @@
 ﻿城市代号,坐标,城市中文名,国家代号,国家中文名
-town_1,"116,-134.5",江户,fac_kingdom_6,江户幕府
-town_2,"152,-92",水户,fac_kingdom_17,水户藩
-town_3,"169.0,173.0",箱馆,fac_kingdom_6,江户幕府
-town_4,"-82,-171",京都,fac_kingdom_6,江户幕府
-town_5,"-104,-195",大坂,fac_kingdom_6,江户幕府
-town_6,"-42,-184",津,fac_kingdom_3,津藩
-town_7,"-132,-177.5",姬路,fac_kingdom_19,冈山藩
-town_8,"-36.2,-82.8",金泽,fac_kingdom_20,加贺藩
-town_9,"-28,-167",名古屋,fac_kingdom_23,尾张藩
-town_10,"76.3,-26.3",新潟,fac_kingdom_6,江户幕府
-town_11,"-316,-214",长府,fac_kingdom_4,长州藩
-town_12,"-355.3 , -251.7",佐贺,fac_kingdom_16,佐贺藩
-town_13,"-246,-204",广岛,fac_kingdom_13,广岛藩
-town_14,"-168,-188",冈山,fac_kingdom_19,冈山藩
-town_15,"173.4,-12.4",仙台,fac_kingdom_2,仙台藩
-town_16,"132.5,-44.9",会津若松,fac_kingdom_1,会津藩
-town_17,"133.2,65.1",久保田,fac_kingdom_26,久保田藩
-town_18,"182.7,69.2",盛冈,fac_kingdom_10,盛冈藩
-town_19,"-337,-233",博多,fac_kingdom_9,福冈藩
-town_20,"-337.6,-338",鹿儿岛,fac_kingdom_15,萨摩藩
-town_21,"-369,-279",长崎,fac_kingdom_6,江户幕府
-town_22,"-227.5,-230.9",松山,fac_kingdom_22,松山藩
-town_23,"-79.5,-187.4",奈良,fac_kingdom_6,江户幕府
-town_24,"-60.0,-119.0",福井,fac_kingdom_5,福井藩
-town_25,"-336.2,-276.6",熊本,fac_kingdom_21,熊本藩
-town_26,"-192,-240",高知,fac_kingdom_12,土佐藩
-town_27,"-161.7,-138.4",鸟取,fac_kingdom_8,鸟取藩
-town_28,"-140.0,-219.0",德岛,fac_kingdom_24,德岛藩
-town_29,"-119.2,-215.2",和歌山,fac_kingdom_7,纪州藩
-town_30,"-115.6,-186.1",神户,fac_kingdom_6,江户幕府
-town_31,"110.0,-149.2",横滨,fac_kingdom_6,江户幕府
-town_32,"44.0,-168.0",骏府,fac_kingdom_6,江户幕府
-town_33,"-66.0,-160.0",彦根,fac_kingdom_27,彦根藩
-castle_1,"99,-104.8",忍城,fac_kingdom_6,江户幕府
-castle_2,"130,-77.8",宇都宫城,fac_kingdom_6,江户幕府
-castle_3,"78.9,-89.3",前桥城,fac_kingdom_6,江户幕府
-castle_4,"117,-101.7",古河城,fac_kingdom_6,江户幕府
-castle_5,"-128,-202",洲本城,fac_kingdom_24,德岛藩
-castle_6,"-85.0,-137.6",小浜城,fac_kingdom_27,彦根藩
-castle_7,"-60.0,-184.1",上野城,fac_kingdom_3,津藩
-castle_8,"149.0,-32.6",二本松城,fac_kingdom_2,仙台藩
-castle_9,"-109.4,-169.0",筱山城,fac_kingdom_7,纪州藩
-castle_10,"-39,-192",松坂城,fac_kingdom_7,纪州藩
-castle_11,"-2.0,-179.5",吉田城,fac_kingdom_23,尾张藩
-castle_12,"-11,-85",富山城,fac_kingdom_20,加贺藩
-castle_13,"40.9,-59.2",高田城,fac_kingdom_6,江户幕府
-castle_14,"101.4,1",村上城,fac_kingdom_25,庄内藩
-castle_15,"46.0,-92.8",上田城,fac_kingdom_6,江户幕府
-castle_16,"-47.0,-137.0",大垣城,fac_kingdom_27,彦根藩
-castle_17,"142.0,-92.0",笠间城,fac_kingdom_17,水户藩
-castle_18,"66.0,-166.0",沼津城,fac_kingdom_6,江户幕府
-castle_19,"-254.2,-172.3",浜田城,fac_kingdom_4,长州藩
-castle_20,"-294.3,-195.9",萩城,fac_kingdom_4,长州藩
-castle_21,"-199.7,-194.3",三原城,fac_kingdom_13,广岛藩
-castle_22,"-169.7,-159.4",津山城,fac_kingdom_8,鸟取藩
-castle_23,"-290.4,-212.8",山口城,fac_kingdom_4,长州藩
-castle_24,"154.5,118.5",弘前城,fac_kingdom_10,盛冈藩
-castle_25,"142.1,-3.4",山形城,fac_kingdom_14,米泽藩
-castle_26,"145.6,-57",白河小峰城,fac_kingdom_1,会津藩
-castle_27,"117.9,20.2",鹤冈城,fac_kingdom_25,庄内藩
-castle_28,"181.5,-57.9",磐城平城,fac_kingdom_2,仙台藩
-castle_29,"155.7,41.8",横手城,fac_kingdom_26,久保田藩
-castle_30,"-372,-242.5",平户城,fac_kingdom_16,佐贺藩
-castle_31,"-317,-224",小仓城,fac_kingdom_4,长州藩
-castle_32,"-51.6,-102.1",大圣寺阵屋,fac_kingdom_20,加贺藩
-castle_33,"-296.9,-339.5",沃肥城,fac_kingdom_15,萨摩藩
-castle_34,"-344.9,-255.6",柳川城,fac_kingdom_21,熊本藩
-castle_35,"-350,-296",八代城,fac_kingdom_21,熊本藩
-castle_36,"-340.8,-248.9",久留米城,fac_kingdom_15,萨摩藩
-castle_37,"-240,-265",宇和岛城,fac_kingdom_12,土佐藩
-castle_38,"-245.8,-245.6",大洲城,fac_kingdom_12,土佐藩
-castle_39,"-155.0,-173.5",龙野城,fac_kingdom_19,冈山藩
-castle_40,"-166.9,-200",高松城,fac_kingdom_24,德岛藩
-castle_41,"99.3,-114",川越城,fac_kingdom_6,江户幕府
-castle_42,"140,-132.2",佐仓城,fac_kingdom_6,江户幕府
-castle_43,"-123,-186",明石城,fac_kingdom_19,冈山藩
-castle_44,"-105,-136",宫津城,fac_kingdom_8,鸟取藩
-castle_45,"-15.0,-173.0",冈崎城,fac_kingdom_23,尾张藩
-castle_46,"99.2,-98.7",馆林城,fac_kingdom_6,江户幕府
-castle_47,"76.9,-94.6",高崎城,fac_kingdom_6,江户幕府
-castle_48,"76.4,-45.7",长冈城,fac_kingdom_18,长冈藩
-castle_49,"-190,-190",福山城,fac_kingdom_19,冈山藩
-castle_50,"137.1,-24.2",米泽城,fac_kingdom_14,米泽藩
-castle_51,"150.0,-63.5",棚仓城,fac_kingdom_1,会津藩
-castle_52,"-276.5,-290.5",延冈城,fac_kingdom_15,萨摩藩
-castle_53,"-295.8,-241.8",中津城,fac_kingdom_9,福冈藩
-castle_54,"-75.7,-180.4",淀城,fac_kingdom_7,纪州藩
-castle_55,"-176.3,-200.1",丸龟城,fac_kingdom_12,土佐藩
-castle_56,"30.5,-101.9",松本城,fac_kingdom_6,江户幕府
-castle_57,"46,-85",松代城,fac_kingdom_6,江户幕府
-castle_58,"134.0,-72.0",喜连川阵屋,fac_kingdom_6,江户幕府
-castle_59,"-39.0,-169.0",桑名城,fac_kingdom_11,桑名藩
-castle_60,"138.0,159.0",松前城,fac_kingdom_10,盛冈藩
-castle_61,"-19.0,-177.0",西尾城,fac_kingdom_23,尾张藩
-castle_62,"-355.5,-239.0",唐津城,fac_kingdom_9,福冈藩
-castle_63,"-265.3,-262.2",臼杵城,fac_kingdom_15,萨摩藩
-castle_64,"-291.3,-275.2",冈城,fac_kingdom_21,熊本藩
-castle_65,"-92.5,-170.5",丹波龟山城,fac_kingdom_6,纪州藩
-castle_66,"-112.5,-203.9",岸和田城,fac_kingdom_7,纪州藩
-castle_67,"85.0,-25.0",新发田城,fac_kingdom_14,米泽藩
-castle_68,"-356.2,-276.6",岛原城,fac_kingdom_16,佐贺藩
-castle_69,"-213.5,-217.9",今治城,fac_kingdom_22,松山藩
-castle_70,"-213.9,-139.1",松江城,fac_kingdom_8,鸟取藩
-castle_71,"89,-157",小田原城,fac_kingdom_6,江户幕府
-castle_72,"24,-179",浜松城,fac_kingdom_23,尾张藩
-castle_73,"34.0,-174.0",挂川城,fac_kingdom_23,尾张藩
-castle_74,"-46.7,-176.4",伊势龟山城,fac_kingdom_3,津藩
-castle_75,"-68.7,-170.4",膳所城,fac_kingdom_27,彦根藩
-castle_76,"-43.6,-95.1",小松城,fac_kingdom_20,加贺藩
-castle_77,"-56.0,-113.0",丸冈城,fac_kingdom_5,福井藩
-castle_78,"142.0,-104",土浦城,fac_kingdom_17,水户藩
-castle_79,"54.3, -134.5",府中城,fac_kingdom_6,江户幕府
-castle_80,"157.5,-44.9",三春城,fac_kingdom_2,仙台藩
-castle_81,"181.5,-26.9",中村城,fac_kingdom_2,仙台藩
-castle_82,"141.9,24.2",新庄城,fac_kingdom_25,庄内藩
-castle_83,"155.7,91.8",大馆城,fac_kingdom_26,久保田藩
+town_1,"116, -134.5",江 户,fac_kingdom_6,江 户 幕 府
+town_2,"152, -92",水 户,fac_kingdom_17,水 户 藩
+town_3,"169, 173",箱 馆,fac_kingdom_6,江 户 幕 府
+town_4,"-82, -171",京 都,fac_kingdom_6,江 户 幕 府
+town_5,"-104, -195",大 坂,fac_kingdom_6,江 户 幕 府
+town_6,"-42, -184",津,fac_kingdom_3,津 藩
+town_7,"-132, -177.5",姬 路,fac_kingdom_19,冈 山 藩
+town_8,"-36.2, -82.8",金 泽,fac_kingdom_20,加 贺 藩
+town_9,"-28, -167",名 古 屋,fac_kingdom_23,尾 张 藩
+town_10,"76.3, -26.3",新 潟,fac_kingdom_6,江 户 幕 府
+town_11,"-316, -214",长 府,fac_kingdom_4,长 州 藩
+town_12,"-355.3, -251.7",佐 贺,fac_kingdom_16,佐 贺 藩
+town_13,"-246, -204",广 岛,fac_kingdom_13,广 岛 藩
+town_14,"-168, -188",冈 山,fac_kingdom_19,冈 山 藩
+town_15,"173.4, -12.4",仙 台,fac_kingdom_2,仙 台 藩
+town_16,"132.5, -44.9",会 津 若 松,fac_kingdom_1,会 津 藩
+town_17,"133.2, 65.1",久 保 田,fac_kingdom_26,久 保 田 藩
+town_18,"182.7, 69.2",盛 冈,fac_kingdom_10,盛 冈 藩
+town_19,"-337, -233",博 多,fac_kingdom_9,福 冈 藩
+town_20,"-337.6, -338",鹿 儿 岛,fac_kingdom_15,萨 摩 藩
+town_21,"-369, -279",长 崎,fac_kingdom_6,江 户 幕 府
+town_22,"-227.5, -230.9",松 山,fac_kingdom_22,松 山 藩
+town_23,"-79.5, -187.4",奈 良,fac_kingdom_6,江 户 幕 府
+town_24,"-60, -119",福 井,fac_kingdom_5,福 井 藩
+town_25,"-336.2, -276.6",熊 本,fac_kingdom_21,熊 本 藩
+town_26,"-192, -240",高 知,fac_kingdom_12,土 佐 藩
+town_27,"-161.7, -138.4",鸟 取,fac_kingdom_8,鸟 取 藩
+town_28,"-140, -219",德 岛,fac_kingdom_24,德 岛 藩
+town_29,"-119.2, -215.2",和 歌 山,fac_kingdom_7,纪 州 藩
+town_30,"-115.6, -186.1",神 户,fac_kingdom_6,江 户 幕 府
+town_31,"110, -149.2",横 滨,fac_kingdom_6,江 户 幕 府
+town_32,"44, -168",骏 府,fac_kingdom_6,江 户 幕 府
+town_33,"-66, -160",彦 根,fac_kingdom_27,彦 根 藩
+castle_1,"99, -104.8",忍 城,fac_kingdom_6,江 户 幕 府
+castle_2,"130, -77.8",宇 都 宫 城,fac_kingdom_6,江 户 幕 府
+castle_3,"78.9, -89.3",前 桥 城,fac_kingdom_6,江 户 幕 府
+castle_4,"117, -101.7",古 河 城,fac_kingdom_6,江 户 幕 府
+castle_5,"-128, -202",洲 本 城,fac_kingdom_24,德 岛 藩
+castle_6,"-85, -137.6",小 浜 城,fac_kingdom_27,彦 根 藩
+castle_7,"-60, -184.1",上 野 城,fac_kingdom_3,津 藩
+castle_8,"149, -32.6",二 本 松 城,fac_kingdom_2,仙 台 藩
+castle_9,"-109.4, -169",筱 山 城,fac_kingdom_7,纪 州 藩
+castle_10,"-39, -192",松 坂 城,fac_kingdom_7,纪 州 藩
+castle_11,"-2, -179.5",吉 田 城,fac_kingdom_23,尾 张 藩
+castle_12,"-11, -85",富 山 城,fac_kingdom_20,加 贺 藩
+castle_13,"40.9, -59.2",高 田 城,fac_kingdom_6,江 户 幕 府
+castle_14,"101.4, 1",村 上 城,fac_kingdom_25,庄 内 藩
+castle_15,"46, -92.8",上 田 城,fac_kingdom_6,江 户 幕 府
+castle_16,"-47, -137",大 垣 城,fac_kingdom_27,彦 根 藩
+castle_17,"142, -92",笠 间 城,fac_kingdom_17,水 户 藩
+castle_18,"66, -166",沼 津 城,fac_kingdom_6,江 户 幕 府
+castle_19,"-254.2, -172.3",浜 田 城,fac_kingdom_4,长 州 藩
+castle_20,"-294.3, -195.9",萩 城,fac_kingdom_4,长 州 藩
+castle_21,"-199.7, -194.3",三 原 城,fac_kingdom_13,广 岛 藩
+castle_22,"-169.7, -159.4",津 山 城,fac_kingdom_8,鸟 取 藩
+castle_23,"-290.4, -212.8",山 口 城,fac_kingdom_4,长 州 藩
+castle_24,"154.5, 118.5",弘 前 城,fac_kingdom_10,盛 冈 藩
+castle_25,"142.1, -3.4",山 形 城,fac_kingdom_14,米 泽 藩
+castle_26,"145.6, -57",白 河 小 峰 城,fac_kingdom_1,会 津 藩
+castle_27,"117.9, 20.2",鹤 冈 城,fac_kingdom_25,庄 内 藩
+castle_28,"181.5, -57.9",磐 城 平 城,fac_kingdom_2,仙 台 藩
+castle_29,"155.7, 41.8",横 手 城,fac_kingdom_26,久 保 田 藩
+castle_30,"-372, -242.5",平 户 城,fac_kingdom_16,佐 贺 藩
+castle_31,"-317, -224",小 仓 城,fac_kingdom_4,长 州 藩
+castle_32,"-51.6, -102.1",大 圣 寺 阵 屋,fac_kingdom_20,加 贺 藩
+castle_33,"-296.9, -339.5",沃 肥 城,fac_kingdom_15,萨 摩 藩
+castle_34,"-344.9, -255.6",柳 川 城,fac_kingdom_21,熊 本 藩
+castle_35,"-350, -296",八 代 城,fac_kingdom_21,熊 本 藩
+castle_36,"-340.8, -248.9",久 留 米 城,fac_kingdom_15,萨 摩 藩
+castle_37,"-240, -265",宇 和 岛 城,fac_kingdom_12,土 佐 藩
+castle_38,"-245.8, -245.6",大 洲 城,fac_kingdom_12,土 佐 藩
+castle_39,"-155, -173.5",龙 野 城,fac_kingdom_19,冈 山 藩
+castle_40,"-166.9, -200",高 松 城,fac_kingdom_24,德 岛 藩
+castle_41,"99.3, -114",川 越 城,fac_kingdom_6,江 户 幕 府
+castle_42,"140, -132.2",佐 仓 城,fac_kingdom_6,江 户 幕 府
+castle_43,"-123, -186",明 石 城,fac_kingdom_19,冈 山 藩
+castle_44,"-105, -136",宫 津 城,fac_kingdom_8,鸟 取 藩
+castle_45,"-15, -173",冈 崎 城,fac_kingdom_23,尾 张 藩
+castle_46,"99.2, -98.7",馆 林 城,fac_kingdom_6,江 户 幕 府
+castle_47,"76.9, -94.6",高 崎 城,fac_kingdom_6,江 户 幕 府
+castle_48,"76.4, -45.7",长 冈 城,fac_kingdom_18,长 冈 藩
+castle_49,"-190, -190",福 山 城,fac_kingdom_19,冈 山 藩
+castle_50,"137.1, -24.2",米 泽 城,fac_kingdom_14,米 泽 藩
+castle_51,"150, -63.5",棚 仓 城,fac_kingdom_1,会 津 藩
+castle_52,"-276.5, -290.5",延 冈 城,fac_kingdom_15,萨 摩 藩
+castle_53,"-295.8, -241.8",中 津 城,fac_kingdom_9,福 冈 藩
+castle_54,"-75.7, -180.4",淀 城,fac_kingdom_7,纪 州 藩
+castle_55,"-176.3, -200.1",丸 龟 城,fac_kingdom_12,土 佐 藩
+castle_56,"30.5, -101.9",松 本 城,fac_kingdom_6,江 户 幕 府
+castle_57,"46, -85",松 代 城,fac_kingdom_6,江 户 幕 府
+castle_58,"134, -72",喜 连 川 阵 屋,fac_kingdom_6,江 户 幕 府
+castle_59,"-39, -169",桑 名 城,fac_kingdom_11,桑 名 藩
+castle_60,"138, 159",松 前 城,fac_kingdom_10,盛 冈 藩
+castle_61,"-19, -177",西 尾 城,fac_kingdom_23,尾 张 藩
+castle_62,"-355.5, -239",唐 津 城,fac_kingdom_9,福 冈 藩
+castle_63,"-265.3, -262.2",臼 杵 城,fac_kingdom_15,萨 摩 藩
+castle_64,"-291.3, -275.2",冈 城,fac_kingdom_21,熊 本 藩
+castle_65,"-92.5, -170.5",丹 波 龟 山 城,fac_kingdom_6,江 户 幕 府
+castle_66,"-112.5, -203.9",岸 和 田 城,fac_kingdom_7,纪 州 藩
+castle_67,"85, -25",新 发 田 城,fac_kingdom_14,米 泽 藩
+castle_68,"-356.2, -276.6",岛 原 城,fac_kingdom_16,佐 贺 藩
+castle_69,"-213.5, -217.9",今 治 城,fac_kingdom_22,松 山 藩
+castle_70,"-213.9, -139.1",松 江 城,fac_kingdom_8,鸟 取 藩
+castle_71,"89, -157",小 田 原 城,fac_kingdom_6,江 户 幕 府
+castle_72,"24, -179",浜 松 城,fac_kingdom_23,尾 张 藩
+castle_73,"34, -174",挂 川 城,fac_kingdom_23,尾 张 藩
+castle_74,"-46.7, -176.4",伊 势 龟 山 城,fac_kingdom_3,津 藩
+castle_75,"-68.7, -170.4",膳 所 城,fac_kingdom_27,彦 根 藩
+castle_76,"-43.6, -95.1",小 松 城,fac_kingdom_20,加 贺 藩
+castle_77,"-56, -113",丸 冈 城,fac_kingdom_5,福 井 藩
+castle_78,"142, -104",土 浦 城,fac_kingdom_17,水 户 藩
+castle_79,"54.3, -134.5",府 中 城,fac_kingdom_6,江 户 幕 府
+castle_80,"157.5, -44.9",三 春 城,fac_kingdom_2,仙 台 藩
+castle_81,"181.5, -26.9",中 村 城,fac_kingdom_2,仙 台 藩
+castle_82,"141.9, 24.2",新 庄 城,fac_kingdom_25,庄 内 藩
+castle_83,"155.7, 91.8",大 馆 城,fac_kingdom_26,久 保 田 藩
+village_1,"88, -142",足 柄 上 郡,,
+village_2,"122.1, -131.3",葛 西,,
+village_3,"111, -126",多 摩 郡,,
+village_4,"101, -155",镰 仓 郡,,
+village_5,"109.5, -159.5",三 浦 郡,,
+village_6,"153.8, -93.2",那 珂 郡,,
+village_7,"142.5, -107.6",新 治 郡,,
+village_8,"146.6, -126.8",香 取 郡 高 冈,,
+village_9,"153.8, -134.1",香 取 郡 多 古,,
+village_10,"101, -107.8",埼 玉 郡,,
+village_11,"125.8, -80.1",河 内 郡,,
+village_12,"81, -103.5",群 马 郡,,
+village_13,"114.8, -98.5",葛 饰 郡,,
+village_14,"123.1, -156.9",天 羽 郡,,
+village_15,"-89.8, -178.3",乙 训 郡,,
+village_16,"-79.5, -166",爱 宕 郡,,
+village_17,"-95.8, -166",葛 野 郡,,
+village_18,"-109, -201",南 郡,,
+village_19,"-114.3, -218.3",大 鸟 郡,,
+village_20,"-112, -185",丰 岛 郡,,
+village_21,"-119, -208.5",日 根 郡,,
+village_22,"-42, -194",一 志 郡,,
+village_23,"-30, -201",答 志 郡,,
+village_24,"-140, -178",饰 东 郡,,
+village_25,"-128.9, -169.2",加 西 郡,,
+village_26,"-129, -206",津 名 郡,,
+village_27,"-98, -139.4",远 敷 郡,,
+village_28,"-67.5, -165",犬 上 郡,,
+village_29,"-104.1, -229.8",牟 娄 郡,,
+village_30,"-63, -140.6",伊 香 郡,,
+village_31,"-115.3, -173.9",多 纪 郡,,
+village_32,"-49, -174",铃 鹿 郡,,
+village_33,"-50, -96",能 美 郡,,
+village_34,"-56.5, -102.5",江 沼 郡,,
+village_35,"-30.2, -74.7",河 北 郡,,
+village_36,"-43.5, -91.1",石 川 郡,,
+village_37,"-36, -166",桑 名 郡 长 岛,,
+village_38,"-23, -169.2",爱 知 郡,,
+village_39,"-31, -163",海 西 郡,,
+village_40,"61, -59",鱼 沼 郡,,
+village_41,"69, -40.3",古 志 郡 长 冈,,
+village_42,"89.3, -24.3",蒲 原 郡,,
+village_43,"49.8, -128.9",巨 摩 郡,,
+village_44,"56, -140.3",八 代 郡,,
+village_45,"48.3, -55.9",刈 羽 郡,,
+village_46,"37.9, -72.4",颈 城 郡 妙 高 山,,
+village_47,"-0.3, -177.4",渥 美 郡,,
+village_48,"-15, -80",射 水 郡,,
+village_49,"59.7, -66",水 内 郡,,
+village_50,"-63, -117",坂 井 郡,,
+village_51,"11.4, -134.1",惠 那 郡,,
+village_52,"101.4, -11.9",岩 船 郡,,
+village_53,"34, -99.7",小 县 郡,,
+village_54,"34, -178.4",城 东 郡,,
+village_55,"36, -118",诹 访 郡,,
+village_56,"-45, -148",席 田 郡,,
+village_57,"-257, -215",佐 伯 郡,,
+village_58,"-233.6, -181.5",山 县 郡,,
+village_59,"-231, -206",贺 茂 郡,,
+village_60,"-175.1, -189.6",儿 岛 郡,,
+village_61,"-155, -182.5",和 气 郡,,
+village_62,"-181.3, -191.7",浅 口 郡,,
+village_63,"-213.1, -153.4",能 义 郡,,
+village_64,"64, -163",骏 东 郡,,
+village_65,"-260.4, -174.3",那 贺 郡,,
+village_66,"-291.2, -194.9",阿 武 郡,,
+village_67,"-218.2, -202.1",御 调 郡,,
+village_68,"-148, -159",东 南 条 郡,,
+village_69,"-316, -217",丰 浦 郡,,
+village_70,"174.3, -25",标 叶 郡,,
+village_71,"185.9, 5.5",桃 生 郡,,
+village_72,"172.3, 4.8",志 田 郡,,
+village_73,"156, -25",信 夫 郡,,
+village_74,"120, -12",置 赐 郡 小 国,,
+village_75,"140, -8",置 赐 郡 赤 汤,,
+village_76,"65.5, -135",都 留 郡,,
+village_77,"128, 76",秋 田 郡,,
+village_78,"131, 96",山 本 郡,,
+village_79,"161, 128",津 轻 郡 黑 石,,
+village_80,"150.6, 133",津 轻 郡 五 所 川 原,,
+village_81,"205.2, 113.4",三 戸 郡,,
+village_82,"182.7, 62",岩 手 郡,,
+village_83,"180.4, 39.3",磐 井 郡,,
+village_84,"150, 8",村 山 郡,,
+village_85,"140.4, -55.1",白 河 郡,,
+village_86,"118, 31",田 川 郡,,
+village_87,"180.5, -53.1",磐 前 郡,,
+village_88,"146.6, 46.7",平 鹿 郡,,
+village_89,"-334, -229",粕 屋 郡,,
+village_90,"-348, -237",志 摩 郡,,
+village_91,"-333.4, -240.1",御 笠 郡,,
+village_92,"-338.3, -355.7",揖 宿 郡,,
+village_93,"-326.1, -329.6",姶 良 郡,,
+village_94,"-321, -353.6",肝 属 郡,,
+village_95,"-367.5, -267.9",彼 杵 郡,,
+village_96,"-353, -279",高 来 郡,,
+village_97,"-373.5, -240",松 浦 郡,,
+village_98,"-313, -222",企 救 郡,,
+village_99,"-285.6, -300.1",儿 汤 郡,,
+village_100,"-296, -321",宫 崎 郡,,
+village_101,"-312, -282",阿 苏 郡,,
+village_102,"-347.9, -294.1",八 代 郡,,
+village_103,"-344.7, -252.6",山 门 郡,,
+village_104,"-206, -222",新 居 郡,,
+village_105,"-230, -236",伊 予 郡,,
+village_106,"-212, -236",浮 穴 郡,,
+village_107,"-238, -267",宇 和 郡,,
+village_108,"-247.8, -247.6",大 洲 城 下 町,,
+village_109,"-137, -227",那 贺 郡,,
+village_110,"-161.7, -202",香 川 郡,,
+village_111,"117, -120",足 立 郡,,
+village_112,"103, -134",比 企 郡,,
+village_113,"-85, -189",添 下 郡,,
+village_114,"-76, -196",葛 上 郡,,
+village_115,"-78, -202",宇 智 郡,,
+village_116,"19, -179",敷 知 郡,,
+village_117,"14, -177",浜 名 郡,,
+village_118,"25, -173",鹿 玉 郡,,
+village_119,"-69, -152",坂 田 郡,,
+village_120,"-21, -158",海 东 郡,,
+village_121,"-300, -219",吉 敷 郡,,
+village_122,"-285, -217",佐 波 郡,,
+village_123,"-273, -222",都 浓 郡,,
+village_124,"-208, -136.3",岛 根 郡,,
+village_125,"-204, -143",会 见 郡,,
+village_126,"-228, -155",出 云 郡,,
+village_127,"-269, -257",海 部 郡 北,,
+village_128,"-285.3, -262.3",大 分 郡,,
+village_129,"-289.2, -277.9",海 部 郡 臼 杵,,
+village_130,"-341, -269",玉 名 郡,,
+village_131,"-344, -287",下 益 城 郡,,
+village_132,"-326, -270",菊 池 郡,,
+village_133,"-186, -239",土 佐 郡,,
+village_134,"-173, -244",香 美 郡,,
+village_135,"-205, -252",高 冈 郡,,
+village_136,"96.3, -121.5",入 间 郡,,
+village_137,"130.7, -134.2",千 叶 郡,,
+village_138,"-120, -187",明 石 郡,,
+village_139,"-123, -146",天 田 郡,,
+village_140,"47, -167",安 倍 郡,,
+village_141,"-7, -174",额 田 郡,,
+village_142,"15, -157",设 乐 郡,,
+village_143,"-6, -149",土 岐 郡,,
+village_144,"25, -144",伊 那 郡,,
+village_145,"79, -147.5",足 柄 峠,,
+village_146,"78.4, -45.7",长 冈 城 下 町,,
+village_147,"-202, -174",哲 多 郡,,
+village_148,"-195, -193",沼 隅 郡,,
+village_149,"110, -37",置 赐 郡 米 泽,,
+village_150,"170, -69",多 贺 郡,,
+village_151,"-361, -255.5",佐 贺 郡,,
+village_152,"-330, -317",人 吉 郡,,
+village_153,"-293, -241",国 东 郡,,
+village_154,"-80.0, -180.0",淀 城 城 下 町,,
+village_155,"-179.0, -201.8",多 度 郡,,
+village_156,"-145, -137",二 方 郡,,
+village_157,"-180, -142",久 米 郡,,
+village_158,"30, -92",筑 摩 郡,,
+village_159,"50, -80",植 科 郡,,
+village_160,"-165, -221",美 马 郡,,
+village_161,"-40, -167",桑 名 郡,,
+village_162,"166, 174",上 矶 町,,
+village_163,"-102.5, -189.5",西 成 郡,,
+village_164,"-5, -165",龟 田 郡,,
+village_165,"-271.9, -275.5",海 部 郡 佐 伯,,
+village_166,"-274.5, -266.5",海 部 郡 大 分,,
+village_167,"-282.5, -281.5",大 野 郡,,
+village_168,"-279.5, -294.5",臼 杵 郡 东,,
+village_169,"-297.5, -279.5",直 入 郡,,
+village_170,"-282.5, -286.5",臼 杵 郡 西,,
+village_171,"-89.5, -158.5",桑 田 郡,,
+village_172,"-90.5, -199.5",锦 部 郡,,
+village_173,"4.5, -167.5",八 名 郡,,
+village_174,"38.5, -171.5",榛 原 郡,,
+village_175,"34.5, -164.5",周 智 郡,,
+village_176,"30.5, -167.5",佐 野 郡,,
+village_177,"39.5, -156.5",志 太 郡,,
+village_178,"-326.5, -231.5",鞍 手 郡,,
+village_179,"-25.5, -137.5",山 县 郡,,
+village_180,"-24.5, -140.5",各 务 郡,,
+village_181,"-31.5, -145.5",厚 见 郡,,
+village_182,"-9.3, -140.9",筑 摩 郡,,
+village_183,"-55.0, -158.9",安 八 郡,,
+village_184,"-12.0, -158.9",春 日 井 郡,,
+village_185,"-123.0, -176.0",加 东 郡,,

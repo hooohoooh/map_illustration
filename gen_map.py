@@ -6,10 +6,10 @@ import colorsys
 import json
 
 # ========== 配置区 ==========
-DEFAULT_TX = -14
-DEFAULT_TY = -39
-DEFAULT_SX = 2.0
-DEFAULT_SY = 1.4
+DEFAULT_TX = -32
+DEFAULT_TY = -41
+DEFAULT_SX = 1.95
+DEFAULT_SY = 1.35
 DEFAULT_ANGLE = 0
 DEFAULT_CX = 500
 DEFAULT_CY = 400
@@ -76,6 +76,7 @@ def generate_city_svg(cities, canvas_width=1000, canvas_height=800, margin=0.1):
     dwg = svgwrite.Drawing(size=(canvas_width, canvas_height), profile='tiny')
     font_family = "SimHei, 'Microsoft YaHei', 'WenQuanYi Micro Hei', 'PingFang SC', sans-serif"
     font_size = 20
+    village_font_size = 14
 
     city_data = {}
 
@@ -93,6 +94,13 @@ def generate_city_svg(cities, canvas_width=1000, canvas_height=800, margin=0.1):
         elif code.startswith('castle'):
             dwg.add(dwg.circle(center=(x, y), r=3, fill='black', stroke='none'))
             text_elem = dwg.text(display_name, insert=(x+7, y+4), font_size=font_size,
+                                 font_family=font_family, fill=text_color, class_='map-label',
+                                 id=label_id)
+        elif code.startswith('village'):
+            # 三角形，顶点向上，缩小尺寸
+            points = [(x, y-2), (x-2, y+2), (x+2, y+2)]
+            dwg.add(dwg.polygon(points=points, fill='#CCCCCC', stroke='none'))
+            text_elem = dwg.text(display_name, insert=(x+7, y+4), font_size=village_font_size,
                                  font_family=font_family, fill=text_color, class_='map-label',
                                  id=label_id)
         else:
@@ -485,14 +493,19 @@ const defaultBgState = {{ ...bgState }};"""
             });
 
             const labels = svgElement.querySelectorAll('.map-label');
-            const baseFontSize = 20;
+            labels.forEach(text => {
+                const originalSize = parseFloat(text.getAttribute('font-size'));
+                text.setAttribute('data-original-font-size', originalSize);
+            });
+
             function updateFontSize() {
                 const zoom = panZoomInstance.getZoom();
-                const newSize = baseFontSize / zoom;
                 labels.forEach(text => {
+                    const originalSize = parseFloat(text.getAttribute('data-original-font-size'));
+                    const newSize = originalSize / zoom;
                     text.setAttribute('font-size', newSize + 'px');
                 });
-            }
+            }            
             updateFontSize();
             panZoomInstance.setOnZoom(updateFontSize);
 
