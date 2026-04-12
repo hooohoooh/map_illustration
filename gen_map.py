@@ -6,9 +6,9 @@ import colorsys
 import json
 
 # ========== 配置区 ==========
-DEFAULT_TX = -32
-DEFAULT_TY = -41
-DEFAULT_SX = 1.95
+DEFAULT_TX = -11
+DEFAULT_TY = -42
+DEFAULT_SX = 2
 DEFAULT_SY = 1.35
 DEFAULT_ANGLE = 0
 DEFAULT_CX = 500
