@@ -115,3 +115,5 @@
 (call_script, "script_give_center_to_faction_aux", "p_castle_81", "fac_kingdom_2"),
 (call_script, "script_give_center_to_faction_aux", "p_castle_82", "fac_kingdom_2"),
 (call_script, "script_give_center_to_faction_aux", "p_castle_83", "fac_kingdom_2"),
+(call_script, "script_give_center_to_faction_aux", "p_castle_84", "fac_kingdom_8"),
+(call_script, "script_give_center_to_faction_aux", "p_castle_85", "fac_kingdom_5"),
