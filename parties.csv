@@ -1,265 +1,267 @@
-p_town_1|长 崎 
-p_town_2|佐 贺 
-p_town_3|鹿 儿 岛 
-p_town_4|博 多 
-p_town_5|熊 本 
-p_town_6|长 府 
-p_town_7|广 岛 
-p_town_8|松 山 
-p_town_9|高 知 
-p_town_10|冈 山 
-p_town_11|鸟 取 
-p_town_12|德 岛 
-p_town_13|姬 路 
-p_town_14|和 歌 山 
-p_town_15|神 户 
-p_town_16|大 坂 
-p_town_17|京 都 
-p_town_18|奈 良 
-p_town_19|彦 根 
-p_town_20|福 井 
-p_town_21|津 
-p_town_22|金 泽 
-p_town_23|名 古 屋 
-p_town_24|骏 府 
-p_town_25|新 潟 
-p_town_26|横 滨 
-p_town_27|江 户 
-p_town_28|会 津 若 松 
-p_town_29|久 保 田 
-p_town_30|水 户 
-p_town_31|箱 馆 
-p_town_32|仙 台 
-p_town_33|盛 冈 
-p_castle_1|平 户 城 
-p_castle_2|唐 津 城 
-p_castle_3|岛 原 城 
-p_castle_4|八 代 城 
-p_castle_5|柳 川 城 
-p_castle_6|久 留 米 城 
-p_castle_7|小 仓 城 
-p_castle_8|沃 肥 城 
-p_castle_9|中 津 城 
-p_castle_10|萩 城 
-p_castle_11|冈 城 
-p_castle_12|山 口 城 
-p_castle_13|延 冈 城 
-p_castle_14|臼 杵 城 
-p_castle_15|浜 田 城 
-p_castle_16|大 洲 城 
-p_castle_17|宇 和 岛 城 
-p_castle_18|今 治 城 
-p_castle_19|松 江 城 
-p_castle_20|三 原 城 
-p_castle_21|福 山 城 
-p_castle_22|丸 龟 城 
-p_castle_23|津 山 城 
-p_castle_24|高 松 城 
-p_castle_25|龙 野 城 
-p_castle_26|洲 本 城 
-p_castle_27|明 石 城 
-p_castle_28|岸 和 田 城 
-p_castle_29|筱 山 城 
-p_castle_30|宫 津 城 
-p_castle_31|丹 波 龟 山 城 
-p_castle_32|小 浜 城 
-p_castle_33|淀 城 
-p_castle_34|膳 所 城 
-p_castle_35|上 野 城 
-p_castle_36|丸 冈 城 
-p_castle_37|大 圣 寺 阵 屋 
-p_castle_38|大 垣 城 
-p_castle_39|伊 势 龟 山 城 
-p_castle_40|小 松 城 
-p_castle_41|松 坂 城 
-p_castle_42|桑 名 城 
-p_castle_43|西 尾 城 
-p_castle_44|冈 崎 城 
-p_castle_45|富 山 城 
-p_castle_46|吉 田 城 
-p_castle_47|浜 松 城 
-p_castle_48|松 本 城 
-p_castle_49|挂 川 城 
-p_castle_50|高 田 城 
-p_castle_51|上 田 城 
-p_castle_52|松 代 城 
-p_castle_53|府 中 城 
-p_castle_54|沼 津 城 
-p_castle_55|长 冈 城 
-p_castle_56|高 崎 城 
-p_castle_57|前 桥 城 
-p_castle_58|新 发 田 城 
-p_castle_59|小 田 原 城 
-p_castle_60|忍 城 
-p_castle_61|馆 林 城 
-p_castle_62|川 越 城 
-p_castle_63|村 上 城 
-p_castle_64|古 河 城 
-p_castle_65|鹤 冈 城 
-p_castle_66|宇 都 宫 城 
-p_castle_67|喜 连 川 阵 屋 
-p_castle_68|米 泽 城 
-p_castle_69|松 前 城 
-p_castle_70|佐 仓 城 
-p_castle_71|新 庄 城 
-p_castle_72|土 浦 城 
-p_castle_73|笠 间 城 
-p_castle_74|山 形 城 
-p_castle_75|白 河 小 峰 城 
-p_castle_76|二 本 松 城 
-p_castle_77|棚 仓 城 
-p_castle_78|弘 前 城 
-p_castle_79|横 手 城 
-p_castle_80|大 馆 城 
-p_castle_81|三 春 城 
-p_castle_82|中 村 城 
-p_castle_83|磐 城 平 城 
-p_castle_84|米 子 城 
-p_castle_85|胜 山 城 
-p_village_1|松 浦 郡 
-p_village_2|彼 杵 郡 
-p_village_3|佐 贺 郡 
-p_village_4|高 来 郡 
-p_village_5|志 摩 郡 
-p_village_6|八 代 郡 
-p_village_7|山 门 郡 
-p_village_8|下 益 城 郡 
-p_village_9|玉 名 郡 
-p_village_10|揖 宿 郡 
-p_village_11|粕 屋 郡 
-p_village_12|御 笠 郡 
-p_village_13|鞍 手 郡 
-p_village_14|姶 良 郡 
-p_village_15|菊 池 郡 
-p_village_16|肝 属 郡 
-p_village_17|丰 浦 郡 
-p_village_18|企 救 郡 
-p_village_19|吉 敷 郡 
-p_village_20|直 入 郡 
-p_village_21|宫 崎 郡 
-p_village_22|国 东 郡 
-p_village_23|阿 武 郡 
-p_village_24|儿 汤 郡 
-p_village_25|大 分 郡 
-p_village_26|佐 波 郡 
-p_village_27|那 贺 郡 
-p_village_28|佐 伯 郡 
-p_village_29|大 洲 城 下 町 
-p_village_30|宇 和 郡 
-p_village_31|贺 茂 郡 
-p_village_32|伊 予 郡 
-p_village_33|浮 穴 郡 
-p_village_34|岛 根 郡 
-p_village_35|新 居 郡 
-p_village_36|高 冈 郡 
-p_village_37|沼 隅 郡 
-p_village_38|土 佐 郡 
-p_village_39|浅 口 郡 
-p_village_40|久 米 郡 
-p_village_41|多 度 郡 
-p_village_42|儿 岛 郡 
-p_village_43|香 美 郡 
-p_village_44|美 马 郡 
-p_village_45|香 川 郡 
-p_village_46|和 气 郡 
-p_village_47|二 方 郡 
-p_village_48|饰 东 郡 
-p_village_49|那 贺 郡 
-p_village_50|津 名 郡 
-p_village_51|加 西 郡 
-p_village_52|加 东 郡 
-p_village_53|明 石 郡 
-p_village_54|日 根 郡 
-p_village_55|多 纪 郡 
-p_village_56|大 鸟 郡 
-p_village_57|丰 岛 郡 
-p_village_58|南 郡 
-p_village_59|牟 娄 郡 
-p_village_60|西 成 郡 
-p_village_61|远 敷 郡 
-p_village_62|葛 野 郡 
-p_village_63|锦 部 郡 
-p_village_64|乙 训 郡 
-p_village_65|桑 田 郡 
-p_village_66|添 下 郡 
-p_village_67|淀 城 城 下 町 
-p_village_68|爱 宕 郡 
-p_village_69|宇 智 郡 
-p_village_70|葛 上 郡 
-p_village_71|坂 田 郡 
-p_village_72|犬 上 郡 
-p_village_73|伊 香 郡 
-p_village_74|坂 井 郡 
-p_village_75|江 沼 郡 
-p_village_76|安 八 郡 
-p_village_77|能 美 郡 
-p_village_78|铃 鹿 郡 
-p_village_79|席 田 郡 
-p_village_80|石 川 郡 
-p_village_81|一 志 郡 
-p_village_82|桑 名 郡 
-p_village_83|桑 名 郡 长 岛 
-p_village_84|海 西 郡 
-p_village_85|河 北 郡 
-p_village_86|答 志 郡 
-p_village_87|爱 知 郡 
-p_village_88|海 东 郡 
-p_village_89|射 水 郡 
-p_village_90|春 日 井 郡 
-p_village_91|额 田 郡 
-p_village_92|龟 田 郡 
-p_village_93|渥 美 郡 
-p_village_94|八 名 郡 
-p_village_95|惠 那 郡 
-p_village_96|敷 知 郡 
-p_village_97|城 东 郡 
-p_village_98|小 县 郡 
-p_village_99|周 智 郡 
-p_village_100|颈 城 郡 妙 高 山 
-p_village_101|榛 原 郡 
-p_village_102|安 倍 郡 
-p_village_103|刈 羽 郡 
-p_village_104|植 科 郡 
-p_village_105|水 内 郡 
-p_village_106|骏 东 郡 
-p_village_107|都 留 郡 
-p_village_108|古 志 郡 长 冈 
-p_village_109|长 冈 城 下 町 
-p_village_110|足 柄 峠 
-p_village_111|群 马 郡 
-p_village_112|蒲 原 郡 
-p_village_113|入 间 郡 
-p_village_114|镰 仓 郡 
-p_village_115|埼 玉 郡 
-p_village_116|岩 船 郡 
-p_village_117|比 企 郡 
-p_village_118|三 浦 郡 
-p_village_119|置 赐 郡 米 泽 
-p_village_120|多 摩 郡 
-p_village_121|葛 饰 郡 
-p_village_122|足 立 郡 
-p_village_123|田 川 郡 
-p_village_124|置 赐 郡 小 国 
-p_village_125|天 羽 郡 
-p_village_126|河 内 郡 
-p_village_127|秋 田 郡 
-p_village_128|千 叶 郡 
-p_village_129|山 本 郡 
-p_village_130|置 赐 郡 赤 汤 
-p_village_131|松前城下町 
-p_village_132|白 河 郡 
-p_village_133|新 治 郡 
-p_village_134|香 取 郡 高 冈 
-p_village_135|平 鹿 郡 
-p_village_136|村 山 郡 
-p_village_137|香 取 郡 多 古 
-p_village_138|那 珂 郡 
-p_village_139|信 夫 郡 
-p_village_140|津 轻 郡 
-p_village_141|上 矶 町 
-p_village_142|多 贺 郡 
-p_village_143|标 叶 郡 
-p_village_144|磐 井 郡 
-p_village_145|磐 前 郡 
-p_village_146|岩 手 郡 
-p_village_147|桃 生 郡 
+p_town_1|长 崎
+p_town_2|佐 贺
+p_town_3|鹿 儿 岛
+p_town_4|博 多
+p_town_5|熊 本
+p_town_6|长 府
+p_town_7|广 岛
+p_town_8|松 山
+p_town_9|高 知
+p_town_10|冈 山
+p_town_11|鸟 取
+p_town_12|德 岛
+p_town_13|姬 路
+p_town_14|和 歌 山
+p_town_15|神 户
+p_town_16|大 坂
+p_town_17|京 都
+p_town_18|奈 良
+p_town_19|彦 根
+p_town_20|福 井
+p_town_21|津
+p_town_22|金 泽
+p_town_23|名 古 屋
+p_town_24|骏 府
+p_town_25|新 泻
+p_town_26|横 滨
+p_town_27|江 户
+p_town_28|会 津 若 松
+p_town_29|久 保 田
+p_town_30|水 户
+p_town_31|箱 馆
+p_town_32|仙 台
+p_town_33|盛 冈
+p_castle_1|平 户 城
+p_castle_2|唐 津 城
+p_castle_3|岛 原 城
+p_castle_4|八 代 城
+p_castle_5|柳 川 城
+p_castle_6|久 留 米 城
+p_castle_7|小 仓 城
+p_castle_8|沃 肥 城
+p_castle_9|中 津 城
+p_castle_10|萩 城
+p_castle_11|冈 城
+p_castle_12|山 口 城
+p_castle_13|延 冈 城
+p_castle_14|臼 杵 城
+p_castle_15|浜 田 城
+p_castle_16|大 洲 城
+p_castle_17|宇 和 岛 城
+p_castle_18|今 治 城
+p_castle_19|松 江 城
+p_castle_20|三 原 城
+p_castle_21|福 山 城
+p_castle_22|丸 龟 城
+p_castle_23|津 山 城
+p_castle_24|高 松 城
+p_castle_25|龙 野 城
+p_castle_26|洲 本 城
+p_castle_27|明 石 城
+p_castle_28|岸 和 田 城
+p_castle_29|筱 山 城
+p_castle_30|宫 津 城
+p_castle_31|丹 波 龟 山 城
+p_castle_32|小 浜 城
+p_castle_33|淀 城
+p_castle_34|膳 所 城
+p_castle_35|上 野 城
+p_castle_36|丸 冈 城
+p_castle_37|大 圣 寺 阵 屋
+p_castle_38|大 垣 城
+p_castle_39|伊 势 龟 山 城
+p_castle_40|小 松 城
+p_castle_41|松 坂 城
+p_castle_42|桑 名 城
+p_castle_43|西 尾 城
+p_castle_44|冈 崎 城
+p_castle_45|富 山 城
+p_castle_46|吉 田 城
+p_castle_47|浜 松 城
+p_castle_48|松 本 城
+p_castle_49|挂 川 城
+p_castle_50|高 田 城
+p_castle_51|上 田 城
+p_castle_52|松 代 城
+p_castle_53|府 中 城
+p_castle_54|沼 津 城
+p_castle_55|长 冈 城
+p_castle_56|高 崎 城
+p_castle_57|前 桥 城
+p_castle_58|新 发 田 城
+p_castle_59|小 田 原 城
+p_castle_60|忍 城
+p_castle_61|馆 林 城
+p_castle_62|川 越 城
+p_castle_63|村 上 城
+p_castle_64|古 河 城
+p_castle_65|鹤 冈 城
+p_castle_66|宇 都 宫 城
+p_castle_67|喜 连 川 阵 屋
+p_castle_68|米 泽 城
+p_castle_69|松 前 城
+p_castle_70|佐 仓 城
+p_castle_71|新 庄 城
+p_castle_72|土 浦 城
+p_castle_73|笠 间 城
+p_castle_74|山 形 城
+p_castle_75|白 河 小 峰 城
+p_castle_76|二 本 松 城
+p_castle_77|棚 仓 城
+p_castle_78|弘 前 城
+p_castle_79|横 手 城
+p_castle_80|大 馆 城
+p_castle_81|三 春 城
+p_castle_82|中 村 城
+p_castle_83|磐 城 平 城
+p_castle_84|米 子 城
+p_castle_85|胜 山 城
+p_village_1|松 浦 郡
+p_village_2|彼 杵 郡
+p_village_3|佐 贺 郡
+p_village_4|高 来 郡
+p_village_5|志 摩 郡
+p_village_6|八 代 郡
+p_village_7|山 门 郡
+p_village_8|下 益 城 郡
+p_village_9|玉 名 郡
+p_village_10|揖 宿 郡
+p_village_11|粕 屋 郡
+p_village_12|御 笠 郡
+p_village_13|鞍 手 郡
+p_village_14|姶 良 郡
+p_village_15|菊 池 郡
+p_village_16|肝 属 郡
+p_village_17|丰 浦 郡
+p_village_18|企 救 郡
+p_village_19|吉 敷 郡
+p_village_20|直 入 郡
+p_village_21|宫 崎 郡
+p_village_22|国 东 郡
+p_village_23|阿 武 郡
+p_village_24|儿 汤 郡
+p_village_25|大 分 郡
+p_village_26|佐 波 郡
+p_village_27|那 贺 郡
+p_village_28|佐 伯 郡
+p_village_29|大 洲 城 下 町
+p_village_30|宇 和 郡
+p_village_31|贺 茂 郡
+p_village_32|伊 予 郡
+p_village_33|浮 穴 郡
+p_village_34|岛 根 郡
+p_village_35|新 居 郡
+p_village_36|高 冈 郡
+p_village_37|沼 隅 郡
+p_village_38|土 佐 郡
+p_village_39|浅 口 郡
+p_village_40|久 米 郡
+p_village_41|多 度 郡
+p_village_42|儿 岛 郡
+p_village_43|香 美 郡
+p_village_44|美 马 郡
+p_village_45|香 川 郡
+p_village_46|和 气 郡
+p_village_47|东 南 条 郡
+p_village_48|二 方 郡
+p_village_49|饰 东 郡
+p_village_50|那 贺 郡
+p_village_51|津 名 郡
+p_village_52|加 西 郡
+p_village_53|加 东 郡
+p_village_54|天 田 郡
+p_village_55|明 石 郡
+p_village_56|日 根 郡
+p_village_57|多 纪 郡
+p_village_58|大 鸟 郡
+p_village_59|丰 岛 郡
+p_village_60|南 郡
+p_village_61|牟 娄 郡
+p_village_62|西 成 郡
+p_village_63|远 敷 郡
+p_village_64|葛 野 郡
+p_village_65|锦 部 郡
+p_village_66|乙 训 郡
+p_village_67|桑 田 郡
+p_village_68|添 下 郡
+p_village_69|淀 城 城 下 町
+p_village_70|爱 宕 郡
+p_village_71|宇 智 郡
+p_village_72|葛 上 郡
+p_village_73|坂 田 郡
+p_village_74|犬 上 郡
+p_village_75|伊 香 郡
+p_village_76|坂 井 郡
+p_village_77|江 沼 郡
+p_village_78|安 八 郡
+p_village_79|能 美 郡
+p_village_80|铃 鹿 郡
+p_village_81|席 田 郡
+p_village_82|石 川 郡
+p_village_83|一 志 郡
+p_village_84|桑 名 郡
+p_village_85|桑 名 郡 长 岛
+p_village_86|海 西 郡
+p_village_87|河 北 郡
+p_village_88|答 志 郡
+p_village_89|爱 知 郡
+p_village_90|海 东 郡
+p_village_91|射 水 郡
+p_village_92|春 日 井 郡
+p_village_93|额 田 郡
+p_village_94|龟 田 郡
+p_village_95|渥 美 郡
+p_village_96|八 名 郡
+p_village_97|惠 那 郡
+p_village_98|敷 知 郡
+p_village_99|城 东 郡
+p_village_100|小 县 郡
+p_village_101|周 智 郡
+p_village_102|颈 城 郡 妙 高 山
+p_village_103|榛 原 郡
+p_village_104|安 倍 郡
+p_village_105|刈 羽 郡
+p_village_106|植 科 郡
+p_village_107|水 内 郡
+p_village_108|骏 东 郡
+p_village_109|都 留 郡
+p_village_110|古 志 郡 长 冈
+p_village_111|长 冈 城 下 町
+p_village_112|足 柄 峠
+p_village_113|群 马 郡
+p_village_114|蒲 原 郡
+p_village_115|入 间 郡
+p_village_116|镰 仓 郡
+p_village_117|埼 玉 郡
+p_village_118|岩 船 郡
+p_village_119|比 企 郡
+p_village_120|三 浦 郡
+p_village_121|置 赐 郡 米 泽
+p_village_122|多 摩 郡
+p_village_123|葛 饰 郡
+p_village_124|足 立 郡
+p_village_125|田 川 郡
+p_village_126|置 赐 郡 小 国
+p_village_127|天 羽 郡
+p_village_128|河 内 郡
+p_village_129|秋 田 郡
+p_village_130|千 叶 郡
+p_village_131|山 本 郡
+p_village_132|置 赐 郡 赤 汤
+p_village_133|松前城下町
+p_village_134|白 河 郡
+p_village_135|新 治 郡
+p_village_136|香 取 郡 高 冈
+p_village_137|平 鹿 郡
+p_village_138|村 山 郡
+p_village_139|香 取 郡 多 古
+p_village_140|那 珂 郡
+p_village_141|信 夫 郡
+p_village_142|津 轻 郡
+p_village_143|上 矶 町
+p_village_144|多 贺 郡
+p_village_145|标 叶 郡
+p_village_146|磐 井 郡
+p_village_147|磐 前 郡
+p_village_148|岩 手 郡
+p_village_149|桃 生 郡
