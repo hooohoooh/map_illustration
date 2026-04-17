@@ -117,6 +117,7 @@
 ("castle_83", "castle_83", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (176.5, -57.9), [], 135),
 ("castle_84", "castle_84", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-205, -144), [], 330),
 ("castle_85", "castle_85", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-50, -120), [], 120),
+("castle_86", "castle_86", icon_castle_a|pf_castle, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-179, -174), [], 120),
 ("village_1", "village_1", icon_village_a|pf_village, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-373.5, -240), [], 45),
 ("village_2", "village_2", icon_village_a|pf_village, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-367.5, -267.9), [], 90),
 ("village_3", "village_3", icon_village_a|pf_village, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-361, -255.5), [], 300),
