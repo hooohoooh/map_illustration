@@ -40,7 +40,7 @@ p_castle_6|久 留 米 城
 p_castle_7|小 仓 城
 p_castle_8|沃 肥 城
 p_castle_9|中 津 城
-p_castle_10|萩 城
+p_castle_10|秋 城
 p_castle_11|冈 城
 p_castle_12|山 口 城
 p_castle_13|延 冈 城
@@ -117,152 +117,164 @@ p_castle_83|磐 城 平 城
 p_castle_84|米 子 城
 p_castle_85|胜 山 城
 p_castle_86|松 山 城
-p_village_1|松 浦 郡
-p_village_2|彼 杵 郡
-p_village_3|佐 贺 郡
-p_village_4|高 来 郡
-p_village_5|志 摩 郡
-p_village_6|八 代 郡
-p_village_7|山 门 郡
-p_village_8|下 益 城 郡
-p_village_9|玉 名 郡
-p_village_10|揖 宿 郡
-p_village_11|粕 屋 郡
-p_village_12|御 笠 郡
-p_village_13|鞍 手 郡
-p_village_14|姶 良 郡
-p_village_15|菊 池 郡
-p_village_16|肝 属 郡
-p_village_17|丰 浦 郡
-p_village_18|企 救 郡
-p_village_19|吉 敷 郡
-p_village_20|直 入 郡
-p_village_21|宫 崎 郡
-p_village_22|国 东 郡
-p_village_23|阿 武 郡
-p_village_24|儿 汤 郡
-p_village_25|大 分 郡
-p_village_26|佐 波 郡
-p_village_27|那 贺 郡
-p_village_28|佐 伯 郡
-p_village_29|大 洲 城 下 町
-p_village_30|宇 和 郡
-p_village_31|贺 茂 郡
-p_village_32|伊 予 郡
-p_village_33|浮 穴 郡
-p_village_34|岛 根 郡
-p_village_35|新 居 郡
-p_village_36|高 冈 郡
-p_village_37|沼 隅 郡
-p_village_38|土 佐 郡
-p_village_39|浅 口 郡
-p_village_40|久 米 郡
-p_village_41|多 度 郡
-p_village_42|儿 岛 郡
-p_village_43|香 美 郡
-p_village_44|美 马 郡
-p_village_45|香 川 郡
-p_village_46|和 气 郡
-p_village_47|东 南 条 郡
-p_village_48|二 方 郡
-p_village_49|饰 东 郡
-p_village_50|那 贺 郡
-p_village_51|津 名 郡
-p_village_52|加 西 郡
-p_village_53|加 东 郡
-p_village_54|天 田 郡
-p_village_55|明 石 郡
-p_village_56|日 根 郡
-p_village_57|多 纪 郡
-p_village_58|大 鸟 郡
-p_village_59|丰 岛 郡
-p_village_60|南 郡
-p_village_61|牟 娄 郡
-p_village_62|西 成 郡
-p_village_63|远 敷 郡
-p_village_64|葛 野 郡
-p_village_65|锦 部 郡
-p_village_66|乙 训 郡
-p_village_67|桑 田 郡
-p_village_68|添 下 郡
-p_village_69|淀 城 城 下 町
-p_village_70|爱 宕 郡
-p_village_71|宇 智 郡
-p_village_72|葛 上 郡
-p_village_73|坂 田 郡
-p_village_74|犬 上 郡
-p_village_75|伊 香 郡
-p_village_76|坂 井 郡
-p_village_77|江 沼 郡
-p_village_78|安 八 郡
-p_village_79|能 美 郡
-p_village_80|铃 鹿 郡
-p_village_81|席 田 郡
-p_village_82|石 川 郡
-p_village_83|一 志 郡
-p_village_84|桑 名 郡
-p_village_85|桑 名 郡 长 岛
-p_village_86|海 西 郡
-p_village_87|河 北 郡
-p_village_88|答 志 郡
-p_village_89|爱 知 郡
-p_village_90|海 东 郡
-p_village_91|射 水 郡
-p_village_92|春 日 井 郡
-p_village_93|额 田 郡
-p_village_94|龟 田 郡
-p_village_95|渥 美 郡
-p_village_96|八 名 郡
-p_village_97|惠 那 郡
-p_village_98|敷 知 郡
-p_village_99|城 东 郡
-p_village_100|小 县 郡
-p_village_101|周 智 郡
-p_village_102|颈 城 郡 妙 高 山
-p_village_103|榛 原 郡
-p_village_104|安 倍 郡
-p_village_105|刈 羽 郡
-p_village_106|植 科 郡
-p_village_107|水 内 郡
-p_village_108|骏 东 郡
-p_village_109|都 留 郡
-p_village_110|古 志 郡 长 冈
-p_village_111|长 冈 城 下 町
-p_village_112|足 柄 峠
-p_village_113|群 马 郡
-p_village_114|蒲 原 郡
-p_village_115|入 间 郡
-p_village_116|镰 仓 郡
-p_village_117|埼 玉 郡
-p_village_118|岩 船 郡
-p_village_119|比 企 郡
-p_village_120|三 浦 郡
-p_village_121|置 赐 郡 米 泽
-p_village_122|多 摩 郡
-p_village_123|葛 饰 郡
-p_village_124|足 立 郡
-p_village_125|田 川 郡
-p_village_126|置 赐 郡 小 国
-p_village_127|天 羽 郡
-p_village_128|河 内 郡
-p_village_129|秋 田 郡
-p_village_130|千 叶 郡
-p_village_131|山 本 郡
-p_village_132|置 赐 郡 赤 汤
-p_village_133|松前城下町
-p_village_134|白 河 郡
-p_village_135|新 治 郡
-p_village_136|香 取 郡 高 冈
-p_village_137|平 鹿 郡
-p_village_138|村 山 郡
-p_village_139|香 取 郡 多 古
-p_village_140|那 珂 郡
-p_village_141|信 夫 郡
-p_village_142|津 轻 郡
-p_village_143|上 矶 町
-p_village_144|多 贺 郡
-p_village_145|标 叶 郡
-p_village_146|磐 井 郡
-p_village_147|磐 前 郡
-p_village_148|岩 手 郡
-p_village_149|桃 生 郡
+p_village_1|松 浦
+p_village_2|彼 杵
+p_village_3|佐 贺
+p_village_4|高 来
+p_village_5|志 摩
+p_village_6|八 代
+p_village_7|山 门
+p_village_8|下 益 城
+p_village_9|玉 名
+p_village_10|揖 宿
+p_village_11|粕 屋
+p_village_12|御 笠
+p_village_13|鞍 手
+p_village_14|姶 良
+p_village_15|菊 池
+p_village_16|肝 属
+p_village_17|丰 浦
+p_village_18|企 救
+p_village_19|吉 敷
+p_village_20|直 入
+p_village_21|宫 崎
+p_village_22|国 东
+p_village_23|阿 武
+p_village_24|儿 汤
+p_village_25|大 分
+p_village_26|佐 波
+p_village_27|那 贺
+p_village_28|佐 伯
+p_village_29|喜多
+p_village_30|宇 和
+p_village_31|贺 茂
+p_village_32|伊 予
+p_village_33|浮 穴
+p_village_34|岛 根
+p_village_35|新 居
+p_village_36|香取
+p_village_37|沼 隅
+p_village_38|土 佐
+p_village_39|浅 口
+p_village_40|久 米
+p_village_41|多 度
+p_village_42|儿 岛
+p_village_43|香 美
+p_village_44|美 马
+p_village_45|香 川
+p_village_46|和 气
+p_village_47|东 南 条
+p_village_48|二 方
+p_village_49|饰 东
+p_village_50|那 贺
+p_village_51|津 名
+p_village_52|加 西
+p_village_53|加 东
+p_village_54|明 石
+p_village_55|日 根
+p_village_56|多 纪
+p_village_57|大 鸟
+p_village_58|丰 岛
+p_village_59|南
+p_village_60|牟 娄
+p_village_61|西 成
+p_village_62|与谢
+p_village_63|葛 野
+p_village_64|锦 部
+p_village_65|乙 训
+p_village_66|桑 田
+p_village_67|添 下
+p_village_68|宇治
+p_village_69|爱 宕
+p_village_70|宇 智
+p_village_71|葛 上
+p_village_72|坂 田
+p_village_73|犬 上
+p_village_74|伊 香
+p_village_75|吉田
+p_village_76|江 沼
+p_village_77|安 八
+p_village_78|能 美
+p_village_79|铃 鹿
+p_village_80|席 田
+p_village_81|石 川
+p_village_82|一 志
+p_village_83|桑 名
+p_village_84|长 岛
+p_village_85|海 西
+p_village_86|河 北
+p_village_87|答 志
+p_village_88|爱 知
+p_village_89|海 东
+p_village_90|射 水
+p_village_91|春 日 井
+p_village_92|额 田
+p_village_93|龟 田
+p_village_94|渥 美
+p_village_95|八 名
+p_village_96|势多
+p_village_97|敷 知
+p_village_98|城 东
+p_village_99|筑摩
+p_village_100|周 智
+p_village_101|小县
+p_village_102|榛 原
+p_village_103|安 倍
+p_village_104|刈 羽
+p_village_105|植 科
+p_village_106|水 内
+p_village_107|骏 东
+p_village_108|都 留
+p_village_109|三岛
+p_village_110|古 志
+p_village_111|足 柄 峠
+p_village_112|群 马
+p_village_113|蒲 原
+p_village_114|入 间
+p_village_115|镰 仓
+p_village_116|埼 玉
+p_village_117|岩 船
+p_village_118|比 企
+p_village_119|三 浦
+p_village_120|置 赐
+p_village_121|多 摩
+p_village_122|葛 饰
+p_village_123|足 立
+p_village_124|田 川
+p_village_125|小 国
+p_village_126|天 羽
+p_village_127|河 内
+p_village_128|秋 田
+p_village_129|千 叶
+p_village_130|山 本
+p_village_131|赤 汤
+p_village_132|津轻
+p_village_133|白 河
+p_village_134|新 治
+p_village_135|高 冈
+p_village_136|平 鹿
+p_village_137|村 山
+p_village_138|那 珂
+p_village_139|信 夫
+p_village_140|福岛
+p_village_141|上 矶
+p_village_142|盐谷
+p_village_143|标 叶
+p_village_144|磐 井
+p_village_145|磐 前
+p_village_146|岩 手
+p_village_147|桃 生
+p_village_148|佐护
+p_village_149|壹岐
+p_village_150|龟田
+p_village_151|白川
+p_village_152|田村
+p_village_153|珠洲
+p_village_154|凤至
+p_village_155|羽咋
+p_village_156|茨城
+p_village_157|坂 井
+p_village_158|大野
+p_village_159|远 敷
+p_village_160|上房
+p_village_161|天草
