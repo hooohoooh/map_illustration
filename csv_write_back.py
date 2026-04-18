@@ -23,76 +23,29 @@ def parse_coord(coord_str):
 def generate_parties_csv(cities_data, output_path):
     """生成 parties.csv 文件"""
     with open(output_path, 'w', encoding='utf-8') as f:
-        for city, coord, name, faction, faction_cn, extra in cities_data:
+        for city, coord, name, faction, faction_cn, extra, lord in cities_data:
             line = f"p_{city}|{name}"
             f.write(line + '\n')
     print(f"生成 {output_path} 完成。")
 
 def generate_module_scripts(cities_data, output_path):
-    """生成 module_scripts.py 文件（仅包含 call_script 行，且仅当派系非空）"""
+    """生成 module_scripts.py 文件（包含 faction 和 lord 的 call_script 行，并附加中文注释）"""
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("# Generated from CSV data\n")
-        for city, coord, name, faction, faction_cn, extra in cities_data:
+        for city, coord, name, faction, faction_cn, extra, lord in cities_data:
             if faction:
-                line = f'(call_script, "script_give_center_to_faction_aux", "p_{city}", "{faction}"),'
-                f.write(line + '\n')
+                line_faction = f'(call_script, "script_give_center_to_faction_aux", "p_{city}", "{faction}"),  # {name}'
+                f.write(line_faction + '\n')
+            if lord:
+                line_lord = f'(call_script, "script_give_center_to_lord", "p_{city}", "{lord}", 0),  # {name}'
+                f.write(line_lord + '\n')
     print(f"生成 {output_path} 完成。")
 
-def update_module_parties(cities_data, output_path):
-    """
-    更新现有的 module_parties.py 文件，替换城市代码、坐标以及末尾的额外数字。
-    不会修改 icon 部分。
-    """
-    if not os.path.exists(output_path):
-        generate_module_parties_new(cities_data, output_path)
-        return
-
-    with open(output_path, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-
-    city_to_index = {}
-    for idx, line in enumerate(lines):
-        m = re.search(r'^\s*\(\s*"([^"]+)"', line)
-        if m:
-            old_city = m.group(1)
-            city_to_index[old_city] = idx
-
-    updated = False
-    for city, coord, name, faction, faction_cn, extra in cities_data:
-        if city in city_to_index:
-            idx = city_to_index[city]
-            line = lines[idx]
-            new_line = line
-
-            # 替换城市代码（前两个出现）
-            new_line = new_line.replace(f'"{city}"', f'"{city}"', 2)
-
-            # 替换坐标
-            new_coord_str = parse_coord(coord)
-            coord_pattern = r'\(\s*-?\d+(?:\.\d+)?\s*,\s*-?\d+(?:\.\d+)?\s*\)'
-            new_line = re.sub(coord_pattern, new_coord_str, new_line, count=1)
-
-            # 替换末尾的额外数字（仅匹配 "], 数字)" 模式）
-            extra_pattern = r'(,\s*\[\]\s*,\s*)\d+(\s*\))'
-            if re.search(extra_pattern, new_line):
-                new_line = re.sub(extra_pattern, rf'\g<1>{extra}\g<2>', new_line)
-
-            if new_line != line:
-                lines[idx] = new_line
-                updated = True
-
-    if updated:
-        with open(output_path, 'w', encoding='utf-8') as f:
-            f.writelines(lines)
-        print(f"更新 {output_path} 完成。")
-    else:
-        print(f"{output_path} 中未找到任何匹配的城市，未做修改。")
-        
 def generate_module_parties_new(cities_data, output_path):
-    """生成新的 module_parties.py 文件，根据城市类型使用正确的图标"""
+    """生成新的 module_parties.py 文件，根据城市类型使用正确的图标，并附加中文注释"""
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write("# Generated from CSV data\n")
-        for city, coord, name, faction, faction_cn, extra in cities_data:
+        for city, coord, name, faction, faction_cn, extra, lord in cities_data:
             # 根据城市名称前缀决定图标
             if city.startswith('town'):
                 icon = "icon_town|pf_town"
@@ -103,7 +56,7 @@ def generate_module_parties_new(cities_data, output_path):
             else:
                 icon = "icon_town|pf_town"
             coord_str = parse_coord(coord)
-            line = f'("{city}", "{city}", {icon}, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, {coord_str}, [], {extra}),'
+            line = f'("{city}", "{city}", {icon}, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, {coord_str}, [], {extra}),  # {name}'
             f.write(line + '\n')
     print(f"生成 {output_path} 完成。")
 
@@ -143,14 +96,21 @@ def main():
                 if len(row) < 6:
                     print(f"提示：第 {row_num} 行缺少额外数字列，自动设置为 195")
 
+            # 领主列（第7列）
+            if len(row) >= 7 and row[6].strip():
+                lord = row[6].strip()
+            else:
+                lord = ''
+
             if city and coord:
-                cities_data.append((city, coord, name, faction, faction_cn, extra))
+                cities_data.append((city, coord, name, faction, faction_cn, extra, lord))
 
     if not cities_data:
         print("没有有效数据，退出。")
         return
 
-    update_module_parties(cities_data, 'module_parties.py')
+    # 直接覆盖生成三个文件（不再执行更新操作）
+    generate_module_parties_new(cities_data, 'module_parties.py')
     generate_parties_csv(cities_data, 'parties.csv')
     generate_module_scripts(cities_data, 'module_scripts.py')
 
