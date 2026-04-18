@@ -279,3 +279,4 @@
 ("village_159", "village_159", icon_village_a|pf_village, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-84, -140), [], 120),
 ("village_160", "village_160", icon_village_a|pf_village, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-179, -169), [], 0),
 ("village_161", "village_161", icon_village_a|pf_village, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-364, -293), [], 0),
+("village_162", "village_162", icon_village_a|pf_village, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, (-58, -184.1), [], 0),
