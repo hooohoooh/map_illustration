@@ -34,10 +34,10 @@ def generate_module_scripts(cities_data, output_path):
         f.write("# Generated from CSV data\n")
         for city, coord, name, faction, faction_cn, extra, lord in cities_data:
             if faction:
-                line_faction = f'(call_script, "script_give_center_to_faction_aux", "p_{city}", "{faction}"),  # {name}'
+                line_faction = f'(call_script, "script_give_center_to_faction_aux", "p_{city}", "{faction}"),'
                 f.write(line_faction + '\n')
             if lord:
-                line_lord = f'(call_script, "script_give_center_to_lord", "p_{city}", "{lord}", 0),  # {name}'
+                line_lord = f'(call_script, "script_give_center_to_lord", "p_{city}", "{lord}", 0),'
                 f.write(line_lord + '\n')
     print(f"生成 {output_path} 完成。")
 
@@ -56,7 +56,7 @@ def generate_module_parties_new(cities_data, output_path):
             else:
                 icon = "icon_town|pf_town"
             coord_str = parse_coord(coord)
-            line = f'("{city}", "{city}", {icon}, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, {coord_str}, [], {extra}),  # {name}'
+            line = f'("{city}", "{city}", {icon}, no_menu, pt_none, fac_neutral, 0, ai_bhvr_hold, 0, {coord_str}, [], {extra}),'
             f.write(line + '\n')
     print(f"生成 {output_path} 完成。")
 
