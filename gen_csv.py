@@ -24,11 +24,10 @@ def parse_module_parties(filepath):
     从 module_parties.py 提取城市代号、坐标和行末数字。
     返回两个字典：
         city_coord: {代号: 坐标字符串}
-        city_lastnum: {代号: 最后一个数字的字符串}
+        city_lastnum: {代号: 最后一个数字的字符串}  (作为城门朝向)
     """
     city_coord = {}
     city_lastnum = {}
-    # 匹配整行：("代号" ... (x, y) , [], 数字),
     pattern = re.compile(
         r'^\s*\("([^"]+)".*?\((-?\d+\.?\d*),\s*(-?\d+\.?\d*)\)\s*,\s*\[\]\s*,\s*(\d+)'
     )
@@ -82,6 +81,46 @@ def parse_module_scripts(filepath):
                     city_faction[city] = faction
     return city_faction
 
+def parse_module_scripts_lord(filepath):
+    """
+    从 module_scripts.py 提取城市代号和领主代号。
+    匹配行如：(call_script, "script_give_center_to_lord", "p_town_1", "trp_kingdom_6_lord", 0),
+    返回字典 {城市代号: 领主代号}
+    """
+    city_lord = {}
+    re_lord = re.compile(r'call_script,\s*"script_give_center_to_lord",\s*"([^"]+)",\s*"([^"]+)"')
+    with open(filepath, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            m = re_lord.search(line)
+            if m:
+                p_town = m.group(1)
+                lord_code = m.group(2)
+                if p_town.startswith('p_'):
+                    city = p_town[2:]
+                    city_lord[city] = lord_code
+    return city_lord
+
+def parse_troops_csv(filepath):
+    """
+    【新增】从 troops.csv 提取领主代号和中文名。
+    格式：trp_knight_22_4_pl|松 平 将 军
+    返回字典 {领主代号: 中文名}
+    """
+    troops_name = {}
+    with open(filepath, 'r', encoding='utf-8') as f:
+        for line in f:
+            line = line.strip()
+            if not line or '|' not in line:
+                continue
+            parts = line.split('|', 1)
+            code = parts[0].strip()
+            name = parts[1].strip()
+            troops_name[code] = name
+    return troops_name
+
 def parse_factions_csv(filepath):
     """从 factions.csv 提取国家代号和国家中文名，返回字典 {代号: 中文名}"""
     faction_name = {}
@@ -97,27 +136,31 @@ def parse_factions_csv(filepath):
     return faction_name
 
 def main():
-    # 解析四个文件（注意 parse_module_parties 现在返回两个字典）
+    # 解析所有文件
     city_coord, city_lastnum = parse_module_parties('module_parties.py')
     city_name = parse_parties_csv('parties.csv')
     city_faction = parse_module_scripts('module_scripts.py')
+    city_lord = parse_module_scripts_lord('module_scripts.py')
     faction_name = parse_factions_csv('factions.csv')
+    troops_name = parse_troops_csv('troops.csv')   # 新增：解析领主中文名
 
     # 按自定义规则排序
     cities = sorted(city_coord.keys(), key=city_sort_key)
 
-    # 准备输出行，表头增加“额外数字”列
-    rows = []
-    header = ['城市代号', '坐标', '城市中文名', '国家代号', '国家中文名', '额外数字']
-    rows.append(header)
+    # 表头增加“领主中文名”列
+    header = ['城市代号', '坐标', '城门朝向', '城市中文名', '国家代号', '国家中文名', '领主代码', '领主中文名']
+    rows = [header]
 
     for city in cities:
         coord = city_coord[city]
+        orientation = city_lastnum.get(city, '')
         ch_name = city_name.get(city, '')
         fac = city_faction.get(city, '')
         fac_ch = faction_name.get(fac, '') if fac else ''
-        lastnum = city_lastnum.get(city, '')   # 获取最后一个数字
-        rows.append([city, coord, ch_name, fac, fac_ch, lastnum])
+        lord_code = city_lord.get(city, '')               # 获取领主代码
+        lord_name = troops_name.get(lord_code, '') if lord_code else ''  # 根据领主代码获取中文名，无代码则留空
+
+        rows.append([city, coord, orientation, ch_name, fac, fac_ch, lord_code, lord_name])
 
     # 写入 CSV（utf-8-sig 带 BOM，兼容 Excel）
     with open('result.csv', 'w', encoding='utf-8-sig', newline='') as f:

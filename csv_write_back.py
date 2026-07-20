@@ -75,41 +75,47 @@ def main():
         reader = csv.reader(f)
         header = next(reader)
         for row_num, row in enumerate(reader, start=2):
-            if len(row) < 5:
-                print(f"警告：第 {row_num} 行字段不足5个，跳过 {row}")
+            # ---------- 修改点：根据新的列顺序读取数据 ----------
+            # 新 CSV 列顺序：城市代号(0), 坐标(1), 城门朝向(2), 城市中文名(3), 国家代号(4), 国家中文名(5), 领主代码(6), 领主中文名(7)
+            if len(row) < 6:  # 至少需要前6列（到国家中文名），领主代码和中文名可选
+                print(f"警告：第 {row_num} 行字段不足6个，跳过 {row}")
                 continue
 
             city = row[0].strip()
             coord = row[1].strip()
-            name = row[2].strip()
-            faction = row[3].strip()
-            faction_cn = row[4].strip()
-            # 额外数字列（第6列）
-            if len(row) >= 6 and row[5].strip():
+            # 城门朝向（原额外数字）位于第3列
+            extra_str = row[2].strip()
+            name = row[3].strip()           # 城市中文名
+            faction = row[4].strip()        # 国家代号
+            faction_cn = row[5].strip()     # 国家中文名
+
+            # 处理城门朝向数值（原额外数字）
+            if extra_str:
                 try:
-                    extra = int(row[5].strip())
+                    extra = int(extra_str)
                 except ValueError:
-                    print(f"警告：第 {row_num} 行额外数字不是有效整数，使用默认值195")
+                    print(f"警告：第 {row_num} 行城门朝向不是有效整数，使用默认值195")
                     extra = 195
             else:
                 extra = 195
-                if len(row) < 6:
-                    print(f"提示：第 {row_num} 行缺少额外数字列，自动设置为 195")
+                print(f"提示：第 {row_num} 行缺少城门朝向，自动设置为 195")
 
-            # 领主列（第7列）
-            if len(row) >= 7 and row[6].strip():
+            # 领主代码（第7列），可选
+            lord = ''
+            if len(row) >= 7:
                 lord = row[6].strip()
-            else:
-                lord = ''
+
+            # 领主中文名（第8列）在本脚本中不使用，直接忽略，不读取
 
             if city and coord:
                 cities_data.append((city, coord, name, faction, faction_cn, extra, lord))
+        # ---------- 修改结束 ----------
 
     if not cities_data:
         print("没有有效数据，退出。")
         return
 
-    # 直接覆盖生成三个文件（不再执行更新操作）
+    # 直接覆盖生成三个文件
     generate_module_parties_new(cities_data, 'module_parties.py')
     generate_parties_csv(cities_data, 'parties.csv')
     generate_module_scripts(cities_data, 'module_scripts.py')

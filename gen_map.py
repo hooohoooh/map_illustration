@@ -51,6 +51,7 @@ def generate_city_svg(cities, canvas_width=1000, canvas_height=800, margin=0.1):
     if not cities:
         return None, {}
 
+    # 修改点1：解包时增加领主代码和中文名
     xs = [c[1][0] for c in cities]
     ys = [c[1][1] for c in cities]
     min_x, max_x = min(xs), max(xs)
@@ -80,7 +81,7 @@ def generate_city_svg(cities, canvas_width=1000, canvas_height=800, margin=0.1):
 
     city_data = {}
 
-    for idx, (code, coord, name, country_code, country_name) in enumerate(cities):
+    for idx, (code, coord, name, country_code, country_name, lord_code, lord_name) in enumerate(cities):
         x, y = map_coord(*coord)
         text_color = get_color_for_country(country_name)
         display_name = f"{name} ({country_name})" if country_name else name
@@ -97,7 +98,6 @@ def generate_city_svg(cities, canvas_width=1000, canvas_height=800, margin=0.1):
                                  font_family=font_family, fill=text_color, class_='map-label',
                                  id=label_id)
         elif code.startswith('village'):
-            # 三角形，顶点向上，缩小尺寸
             points = [(x, y-2), (x-2, y+2), (x+2, y+2)]
             dwg.add(dwg.polygon(points=points, fill='#CCCCCC', stroke='none'))
             text_elem = dwg.text(display_name, insert=(x+7, y+4), font_size=village_font_size,
@@ -113,7 +113,9 @@ def generate_city_svg(cities, canvas_width=1000, canvas_height=800, margin=0.1):
         city_data[label_id] = {
             "originalText": display_name,
             "cityCode": code,
-            "factionCode": country_code
+            "factionCode": country_code,
+            "lordCode": lord_code,       # 新增领主代码
+            "lordName": lord_name        # 新增领主中文名
         }
 
     svg_string = dwg.tostring()
@@ -126,16 +128,22 @@ def main():
         reader = csv.reader(f)
         header = next(reader)
         for row in reader:
-            if len(row) < 5:
+            # 修改点2：增加领主列的读取
+            if len(row) < 6:   # 至少需要前6列（到国家中文名）
                 continue
             code = row[0].strip()
             coord_str = row[1].strip()
-            name = row[2].strip()
-            country_code = row[3].strip()
-            country_name = row[4].strip()
+            # 城门朝向在row[2]，本脚本不使用，跳过
+            name = row[3].strip()
+            country_code = row[4].strip()
+            country_name = row[5].strip()
+            lord_code = row[6].strip() if len(row) >= 7 else ''
+            lord_name = row[7].strip() if len(row) >= 8 else ''
+
             coord = parse_coord(coord_str)
             if coord:
-                cities.append((code, coord, name, country_code, country_name))
+                # 城市元组扩展为 (code, coord, name, country_code, country_name, lord_code, lord_name)
+                cities.append((code, coord, name, country_code, country_name, lord_code, lord_name))
 
     if not cities:
         print("没有有效的城市数据！")
@@ -168,7 +176,7 @@ const defaultBgState = {{ ...bgState }};"""
 
     city_data_json = json.dumps(city_data, ensure_ascii=False)
 
-    # 完整 HTML 模板（包含全屏样式）
+    # 修改点3：在HTML模板中增加“显示领主信息”按钮，并重构切换逻辑
     html_template = """<!DOCTYPE html>
 <html>
 <head>
@@ -336,7 +344,6 @@ const defaultBgState = {{ ...bgState }};"""
     <button id="toggle-panel-btn">+</button>
     <div id="control-panel" class="hidden">
         <h3>背景地图调整</h3>
-        <!-- 编辑模式移到标题下方最显眼位置 -->
         <div class="mode-toggle">
             <label>
                 <input type="checkbox" id="edit-mode-checkbox"> 编辑模式
@@ -385,6 +392,7 @@ const defaultBgState = {{ ...bgState }};"""
         </div>
 
         <button id="toggle-code-btn">显示城市代码</button>
+        <button id="toggle-lord-btn">显示领主信息</button>   <!-- 新增按钮 -->
         <button id="reset-bg-btn">重置背景</button>
         <div class="note">
             <p><strong>编辑模式操作（背景移动，城市不动）：</strong></p>
@@ -396,6 +404,7 @@ const defaultBgState = {{ ...bgState }};"""
             <p>勾选“固定全图”可强制显示完整画布，便于调试。</p>
             <p><strong>重置背景将恢复为您在脚本配置区设置的默认值。</strong></p>
             <p><strong>“显示城市代码”按钮：</strong> 点击后在城市名后显示城市代号和派系代号，再次点击恢复。</p>
+            <p><strong>“显示领主信息”按钮：</strong> 点击后在城市名后显示领主代码和中文名，可同时显示。</p>
         </div>
     </div>
 
@@ -718,9 +727,11 @@ const defaultBgState = {{ ...bgState }};"""
 
             document.getElementById('reset-bg-btn').addEventListener('click', resetBackground);
 
-            // ---------- 显示/隐藏城市代码 ----------
+            // ---------- 显示/隐藏城市代码与领主信息（重构为统一更新） ----------
             const toggleCodeBtn = document.getElementById('toggle-code-btn');
+            const toggleLordBtn = document.getElementById('toggle-lord-btn');
             let codeVisible = false;
+            let lordVisible = false;
 
             function initCityData() {
                 const labels = document.querySelectorAll('.map-label');
@@ -731,37 +742,56 @@ const defaultBgState = {{ ...bgState }};"""
                         label.setAttribute('data-original-text', data.originalText);
                         label.setAttribute('data-city-code', data.cityCode);
                         label.setAttribute('data-faction-code', data.factionCode);
+                        label.setAttribute('data-lord-code', data.lordCode);
+                        label.setAttribute('data-lord-name', data.lordName);
                     }
                 });
             }
 
-            function toggleCodeDisplay() {
+            function updateAllLabels() {
                 const labels = document.querySelectorAll('.map-label');
-                if (!codeVisible) {
-                    labels.forEach(label => {
-                        const original = label.getAttribute('data-original-text');
-                        const cityCode = label.getAttribute('data-city-code');
-                        const factionCode = label.getAttribute('data-faction-code');
-                        let newText = original;
-                        if (cityCode || factionCode) {
-                            newText += ` [${cityCode}:${factionCode}]`;
+                labels.forEach(label => {
+                    const original = label.getAttribute('data-original-text');
+                    let text = original;
+                    const cityCode = label.getAttribute('data-city-code');
+                    const factionCode = label.getAttribute('data-faction-code');
+                    const lordCode = label.getAttribute('data-lord-code');
+                    const lordName = label.getAttribute('data-lord-name');
+
+                    if (codeVisible && (cityCode || factionCode)) {
+                        text += ` [${cityCode}:${factionCode}]`;
+                    }
+                    if (lordVisible) {
+                        let lordStr = '';
+                        if (lordCode && lordName) {
+                            lordStr = ` ${lordCode} ${lordName}`;
+                        } else if (lordCode) {
+                            lordStr = ` ${lordCode}`;
+                        } else if (lordName) {
+                            lordStr = ` ${lordName}`;
+                        } else {
+                            lordStr = ' 无领主';
                         }
-                        label.textContent = newText;
-                    });
-                    toggleCodeBtn.textContent = '隐藏城市代码';
-                    codeVisible = true;
-                } else {
-                    labels.forEach(label => {
-                        const original = label.getAttribute('data-original-text');
-                        if (original) label.textContent = original;
-                    });
-                    toggleCodeBtn.textContent = '显示城市代码';
-                    codeVisible = false;
-                }
+                        text += ` (领主:${lordStr})`;
+                    }
+                    label.textContent = text;
+                });
+                toggleCodeBtn.textContent = codeVisible ? '隐藏城市代码' : '显示城市代码';
+                toggleLordBtn.textContent = lordVisible ? '隐藏领主信息' : '显示领主信息';
             }
 
+            toggleCodeBtn.addEventListener('click', () => {
+                codeVisible = !codeVisible;
+                updateAllLabels();
+            });
+
+            toggleLordBtn.addEventListener('click', () => {
+                lordVisible = !lordVisible;
+                updateAllLabels();
+            });
+
             initCityData();
-            toggleCodeBtn.addEventListener('click', toggleCodeDisplay);
+            updateAllLabels(); // 初始化显示（均为隐藏状态）
 
             // ---------- 面板最小化功能 ----------
             const toggleBtn = document.getElementById('toggle-panel-btn');
@@ -795,6 +825,7 @@ const defaultBgState = {{ ...bgState }};"""
     print("城镇显示为黑色方形，城堡显示为黑色圆形，文字颜色按国家区分并附国家名。")
     print("新增最小化按钮（左上角），点击可隐藏/显示控制面板。")
     print("新增'显示城市代码'按钮，点击可在城市名后显示城市代号和派系代号。")
+    print("新增'显示领主信息'按钮，点击可在城市名后显示领主代码和中文名，可与城市代码同时显示。")
     print("编辑模式复选框已移至控制面板最顶部。")
 
 if __name__ == '__main__':
