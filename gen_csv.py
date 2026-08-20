@@ -103,23 +103,26 @@ def parse_module_scripts_lord(filepath):
                     city_lord[city] = lord_code
     return city_lord
 
-def parse_troops_csv(filepath):
+def parse_lords_csv(filepath):
     """
-    【新增】从 troops.csv 提取领主代号和中文名。
-    格式：trp_knight_22_4_pl|松 平 将 军
+    从 lords.csv 提取领主代号和中文名。
+    格式：trp_kingdom_1_lord,松 平 容 保,年龄（可选）
     返回字典 {领主代号: 中文名}
     """
-    troops_name = {}
+    lords_name = {}
     with open(filepath, 'r', encoding='utf-8') as f:
         for line in f:
             line = line.strip()
-            if not line or '|' not in line:
+            if not line:
                 continue
-            parts = line.split('|', 1)
+            # 按逗号分隔，取前两个字段
+            parts = line.split(',')
+            if len(parts) < 2:
+                continue
             code = parts[0].strip()
             name = parts[1].strip()
-            troops_name[code] = name
-    return troops_name
+            lords_name[code] = name
+    return lords_name
 
 def parse_factions_csv(filepath):
     """从 factions.csv 提取国家代号和国家中文名，返回字典 {代号: 中文名}"""
@@ -142,12 +145,12 @@ def main():
     city_faction = parse_module_scripts('module_scripts.py')
     city_lord = parse_module_scripts_lord('module_scripts.py')
     faction_name = parse_factions_csv('factions.csv')
-    troops_name = parse_troops_csv('troops.csv')   # 新增：解析领主中文名
+    lords_name = parse_lords_csv('lords.csv')   # 修改：解析 lords.csv
 
     # 按自定义规则排序
     cities = sorted(city_coord.keys(), key=city_sort_key)
 
-    # 表头增加“领主中文名”列
+    # 表头
     header = ['城市代号', '坐标', '城门朝向', '城市中文名', '国家代号', '国家中文名', '领主代码', '领主中文名']
     rows = [header]
 
@@ -157,8 +160,8 @@ def main():
         ch_name = city_name.get(city, '')
         fac = city_faction.get(city, '')
         fac_ch = faction_name.get(fac, '') if fac else ''
-        lord_code = city_lord.get(city, '')               # 获取领主代码
-        lord_name = troops_name.get(lord_code, '') if lord_code else ''  # 根据领主代码获取中文名，无代码则留空
+        lord_code = city_lord.get(city, '')
+        lord_name = lords_name.get(lord_code, '') if lord_code else ''
 
         rows.append([city, coord, orientation, ch_name, fac, fac_ch, lord_code, lord_name])
 

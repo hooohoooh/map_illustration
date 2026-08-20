@@ -32,7 +32,7 @@ town_30,"-115.6, -186.1",150,神 户,fac_kingdom_6,江 户 幕 府,trp_kingdom_6
 town_31,"110, -149.2",135,横 滨,fac_kingdom_6,江 户 幕 府,trp_kingdom_6_lord,德 川 庆 喜
 town_32,"44, -168",255,骏 府,fac_kingdom_6,江 户 幕 府,trp_kingdom_6_lord,德 川 庆 喜
 town_33,"-66, -160",255,彦 根,fac_kingdom_27,彦 根 藩,trp_kingdom_27_lord,井 伊 直 宪
-castle_1,"99, -104.8",330,忍 城,fac_kingdom_6,江 户 幕 府,,
+castle_1,"99, -104.8",330,忍 城,fac_kingdom_6,江 户 幕 府,trp_knight_6_15,松 平 忠 诚 
 castle_2,"130, -77.8",285,宇 都 宫 城,fac_kingdom_6,江 户 幕 府,,
 castle_3,"78.9, -94.3",105,前 桥 城,fac_kingdom_6,江 户 幕 府,,
 castle_4,"117, -101.7",345,古 河 城,fac_kingdom_6,江 户 幕 府,,
@@ -57,7 +57,7 @@ castle_22,"-169.7, -159.4",300,津 山 城,fac_kingdom_8,鸟 取 藩,trp_knight_
 castle_23,"-290.4, -212.8",120,山 口 城,fac_kingdom_4,长 州 藩,trp_knight_4_3,大 村 益 次 郎
 castle_24,"154.5, 118.5",255,弘 前 城,fac_kingdom_10,盛 冈 藩,trp_knight_10_2,津 轻 承 昭
 castle_25,"142.1, -3.4",345,山 形 城,fac_kingdom_14,米 泽 藩,trp_knight_14_1,水 野 忠 精
-castle_26,"145.6, -57",285,白 河 小 峰 城,fac_kingdom_6,江 户 幕 府,,
+castle_26,"145.6, -57",285,白 河 小 峰 城,fac_kingdom_1,会 津 藩,trp_knight_1_2,阿 部 正 静
 castle_27,"117.9, 20.2",225,鹤 冈 城,fac_kingdom_25,庄 内 藩,trp_kingdom_25_lord,酒 井 忠 笃
 castle_28,"176.5, -57.9",135,磐 城 平 城,fac_kingdom_2,仙 台 藩,trp_knight_2_2,安 藤 信 勇
 castle_29,"155.7, 41.8",360,横 手 城,fac_kingdom_26,久 保 田 藩,trp_knight_26_1,户 村 义 得
